@@ -94,6 +94,8 @@
 		C8DE0B782A07AA940041C402 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				C8DE0BA42A07BCAE0041C402 /* Navigation */,
+				C8DE0BA32A07BC9A0041C402 /* Models */,
 				C8DE0B792A07AA940041C402 /* StepByStepApp.swift */,
 				C8DE0B7B2A07AA940041C402 /* ContentView.swift */,
 				C8DE0B7D2A07AA970041C402 /* Assets.xcassets */,
@@ -125,6 +127,20 @@
 				C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */,
 			);
 			path = StepByStepUITests;
+			sourceTree = "<group>";
+		};
+		C8DE0BA32A07BC9A0041C402 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C8DE0BA42A07BCAE0041C402 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
