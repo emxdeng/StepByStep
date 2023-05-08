@@ -15,7 +15,7 @@ struct StepByStepApp: App {
         WindowGroup {
             currentView
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                         withAnimation {
                             currentView = AnyView(GetStartedView())
                         }

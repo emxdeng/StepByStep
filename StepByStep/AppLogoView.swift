@@ -19,10 +19,24 @@ struct AppLogoView: View {
                     .frame(width: 180, height: 180)
                 
                 Text("Loading...")
-//                    .font(Font.custom("TropicalAsianDEMO-Regular", size: 55))
+                    .font(Font.custom("TropicalAsianDEMO-Regular", size: 55))
                     .foregroundColor(.white)
             }
-            .padding(.vertical, 50)
+            .padding(.vertical, 40.0)
         }
     }
+    
+    //Debug: show all avaliable fonts in the app
+    /*
+    init() {
+        for familyname in UIFont.familyNames{
+            print(familyname)
+            
+            for fontname in UIFont.fontNames(forFamilyName: familyname){
+                print("--\(fontname)")
+            }
+        }
+    }
+    */
+    
 }
