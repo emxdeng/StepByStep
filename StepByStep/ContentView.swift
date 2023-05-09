@@ -97,28 +97,23 @@ struct ContentView: View {
         }
         
         // Code for 'helpful habit' that the user will input
-        List {
-            VStack {
-                Text("Helpful habit")
-                    .font(.system(size: 22))
-                    .fontWeight(.regular)
-                    .foregroundColor(CustomColor.textColor)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .alignmentGuide(.leading) { _ in 0 }
+        Form {
+            Section(header: Text("Helpful habit")
+                .font(.system(size: 22))
+                .fontWeight(.regular)
+                .foregroundColor(CustomColor.textColor)
+            ) {
                 TextField("Write your habit here...", text: $habitText)
                     .background(selectedHabitColor)
             }
-        }
-        
-        // Code for habit color palette
-        List {
-            VStack {
-                Text("Habit colour")
-                    .font(.system(size: 22))
-                    .fontWeight(.regular)
-                    .foregroundColor(CustomColor.textColor)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .alignmentGuide(.leading) { _ in 0 }
+            
+            
+            // Code for habit color palette
+            Section(header: Text("Habit colour")
+                .font(.system(size: 22))
+                .fontWeight(.regular)
+                .foregroundColor(CustomColor.textColor)
+            ) {
                 HStack {
                     Button("") {
                         selectedHabitColor = CustomColor.habitColor1
@@ -164,28 +159,28 @@ struct ContentView: View {
                     .clipShape(Circle())
                     
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor7
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor7)
                     .clipShape(Circle())
                     
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor8
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor8)
                     .clipShape(Circle())
                     
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor9
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor9)
                     .clipShape(Circle())
                     
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor10
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor10)
@@ -193,31 +188,35 @@ struct ContentView: View {
                 }
                 HStack {
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor11
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor11)
                     .clipShape(Circle())
+                    
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor12
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor12)
                     .clipShape(Circle())
+                    
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor13
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor13)
                     .clipShape(Circle())
+                    
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor14
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor14)
                     .clipShape(Circle())
+                    
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor15
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor15)
@@ -225,31 +224,71 @@ struct ContentView: View {
                 }
                 HStack {
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor16
+                    }
+                    .frame(width: 50, height: 50)
+                    .background(CustomColor.habitColor16)
+                    .clipShape(Circle())
+                    
+                    Button("") {
+                        selectedHabitColor = CustomColor.habitColor17
+                    }
+                    .frame(width: 50, height: 50)
+                    .background(CustomColor.habitColor17)
+                    .clipShape(Circle())
+                    
+                    Button("") {
+                        selectedHabitColor = CustomColor.habitColor18
+                    }
+                    .frame(width: 50, height: 50)
+                    .background(CustomColor.habitColor18)
+                    .clipShape(Circle())
+                    
+                    Button("") {
+                        selectedHabitColor = CustomColor.habitColor19
+                    }
+                    .frame(width: 50, height: 50)
+                    .background(CustomColor.habitColor19)
+                    .clipShape(Circle())
+                    
+                    Button("") {
+                        selectedHabitColor = CustomColor.habitColor20
+                    }
+                    .frame(width: 50, height: 50)
+                    .background(CustomColor.habitColor20)
+                    .clipShape(Circle())
+                }
+                HStack {
+                    Button("") {
+                        selectedHabitColor = CustomColor.habitColor21
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor21)
                     .clipShape(Circle())
+                    
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor22
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor22)
                     .clipShape(Circle())
+                    
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor23
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor23)
                     .clipShape(Circle())
+                    
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor24
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor24)
                     .clipShape(Circle())
+                    
                     Button("") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        selectedHabitColor = CustomColor.habitColor25
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor25)
@@ -257,6 +296,7 @@ struct ContentView: View {
                 }
             }
         }
+        
         
         // Code for weekly calendar
         List {
