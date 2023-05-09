@@ -48,7 +48,7 @@ struct ContentView: View {
         
         // Code for title of this page
         Text("Now let's set the specifics of\nyour goal and habit :)")
-            .font(Font.custom("Skia", size: 24))
+            .font(Font.custom("Skia", size: 22))
             .foregroundColor(CustomColor.textColor)
             .multilineTextAlignment(.leading)
             .lineLimit(2)
