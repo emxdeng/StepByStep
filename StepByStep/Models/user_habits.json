@@ -1,0 +1,29 @@
+{
+    "user_habits": [
+        {
+            "goal": "Staying fit",
+            "habit": "Exercise regularly",
+            "color": "",
+            "time": "",
+            "dueDate": "",
+            "howOften": "",
+            "howLong": "",
+            "howManyTimes": ""
+        },
+        {
+                        //
+        },
+        {
+                        //
+        },
+        {
+                       //
+        },
+        {
+                        //
+        },
+        {
+                        //
+        }
+    ]
+}
