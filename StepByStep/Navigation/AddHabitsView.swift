@@ -1,5 +1,5 @@
 //
-//  AddSubgoalView.swift
+//  AddHabitsView.swift
 //  StepByStep
 //
 //  Created by Emily Deng on 7/5/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddSubgoalView: View {
+struct AddHabitsView: View {
     
     //Properties
     var body: some View {
@@ -95,9 +95,9 @@ struct AddSubgoalView: View {
     
 }
 
-struct AddSubgoalView_Previews: PreviewProvider {
+struct AddHabitsView_Previews: PreviewProvider {
     static var previews: some View {
-        AddSubgoalView()
+        AddHabitsView()
             .previewDevice("iPhone 14 Pro")
     }
 }

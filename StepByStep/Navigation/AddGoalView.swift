@@ -20,17 +20,8 @@ struct AddGoalView: View {
             VStack {
                 Text("Do you have something big you want to achieve?")
                     .font(.headline)
-                Text("My goal is...")
-                TextField("Add your goal here or choose one below", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/).border(.secondary).padding()
-                Text("Add a habit to my existing big goal")
-            }.lineSpacing(5)
-            
-            Spacer()
-            
-            Text("If you're not sure, here are some of our suggestions!")
-                .font(.headline)
-            
-            Spacer()
+            }.padding()
+
             
             VStack {
                 

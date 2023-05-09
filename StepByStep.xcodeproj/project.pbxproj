@@ -15,7 +15,7 @@
 		C8DE0B952A07AA970041C402 /* StepByStepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B942A07AA970041C402 /* StepByStepUITests.swift */; };
 		C8DE0B972A07AA970041C402 /* StepByStepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */; };
 		C8DE0BA62A090C4D0041C402 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */; };
-		C8DE0BA82A090C6B0041C402 /* AddSubgoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0BA72A090C6B0041C402 /* AddSubgoalView.swift */; };
+		C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		C8DE0B942A07AA970041C402 /* StepByStepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepUITests.swift; sourceTree = "<group>"; };
 		C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
-		C8DE0BA72A090C6B0041C402 /* AddSubgoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubgoalView.swift; sourceTree = "<group>"; };
+		C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */,
-				C8DE0BA72A090C6B0041C402 /* AddSubgoalView.swift */,
+				C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DE0BA62A090C4D0041C402 /* AddGoalView.swift in Sources */,
-				C8DE0BA82A090C6B0041C402 /* AddSubgoalView.swift in Sources */,
+				C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */,
 				C8DE0B7C2A07AA940041C402 /* ContentView.swift in Sources */,
 				C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */,
 			);
