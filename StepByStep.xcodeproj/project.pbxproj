@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08EDA7F62A0A65BD0083299A /* Skia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08EDA7F52A0A65BD0083299A /* Skia.ttf */; };
 		C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B792A07AA940041C402 /* StepByStepApp.swift */; };
 		C8DE0B7C2A07AA940041C402 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B7B2A07AA940041C402 /* ContentView.swift */; };
 		C8DE0B7E2A07AA970041C402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0B7D2A07AA970041C402 /* Assets.xcassets */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08EDA7F42A0A65310083299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		08EDA7F52A0A65BD0083299A /* Skia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skia.ttf; sourceTree = SOURCE_ROOT; };
 		C8DE0B762A07AA940041C402 /* StepByStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepByStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DE0B792A07AA940041C402 /* StepByStepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepApp.swift; sourceTree = "<group>"; };
 		C8DE0B7B2A07AA940041C402 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 		C8DE0B782A07AA940041C402 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				08EDA7F42A0A65310083299A /* Info.plist */,
 				C8DE0BA42A07BCAE0041C402 /* Navigation */,
 				C8DE0BA32A07BC9A0041C402 /* Models */,
 				C8DE0B792A07AA940041C402 /* StepByStepApp.swift */,
@@ -125,6 +129,7 @@
 			children = (
 				C8DE0B942A07AA970041C402 /* StepByStepUITests.swift */,
 				C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */,
+				08EDA7F52A0A65BD0083299A /* Skia.ttf */,
 			);
 			path = StepByStepUITests;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EDA7F62A0A65BD0083299A /* Skia.ttf in Resources */,
 				C8DE0B812A07AA970041C402 /* Preview Assets.xcassets in Resources */,
 				C8DE0B7E2A07AA970041C402 /* Assets.xcassets in Resources */,
 			);
@@ -436,6 +442,7 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StepByStep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -465,6 +472,7 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StepByStep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

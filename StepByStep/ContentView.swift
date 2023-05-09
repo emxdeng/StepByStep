@@ -47,17 +47,15 @@ struct ContentView: View {
     var body: some View {
         
         // Code for title of this page
-        List {
-            Text("Now let's set the specifics of\nyour goal and habit :)")
-                .font(.system(size: 22))
-                .fontWeight(.bold)
-                .foregroundColor(CustomColor.textColor)
-                .multilineTextAlignment(.leading)
-                .lineLimit(2)
-            }
+        Text("Now let's set the specifics of\nyour goal and habit :)")
+            .font(Font.custom("Skia", size: 24))
+            .foregroundColor(CustomColor.textColor)
+            .multilineTextAlignment(.leading)
+            .lineLimit(2)
+            
         
         // Code for choosing the goal the habit is part of
-        List {
+        
             VStack {
                 Text("My goal")
                     .font(.system(size: 22))
@@ -69,32 +67,37 @@ struct ContentView: View {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
                 }
             }
-        }
+        
         
         // Code for setting the due date of the goal
-        List {
+        
             VStack {
-                HStack{
+                HStack {
                     Text("Due date")
                         .font(.system(size: 22))
                         .fontWeight(.regular)
                         .foregroundColor(hasDueDate ? CustomColor.textColor : CustomColor.gray)
                         .multilineTextAlignment(.leading)
-                    Text("No due date")
-                        .fontWeight(.regular)
-                        .foregroundColor(hasDueDate ? CustomColor.textColor : CustomColor.gray)
-                        .font(.system(size: 16))
-                    Toggle(isOn: $hasDueDate) {
-                        Text("")
+                    
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Toggle(isOn: $hasDueDate) {
+                                Text("")
+                            }
+                            
+                            Text("No due date")
+                                .fontWeight(.regular)
+                                .foregroundColor(hasDueDate ? CustomColor.textColor : CustomColor.gray)
+                                .font(.system(size: 16))
+                        }
                     }
                 }
                 if hasDueDate {
                     DatePicker(selection: $selectedDate, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
                         .background(CustomColor.lightOrange)
-                    
                 }
             }
-        }
+        
         
         // Code for 'helpful habit' that the user will input
         Form {
@@ -105,6 +108,7 @@ struct ContentView: View {
             ) {
                 TextField("Write your habit here...", text: $habitText)
                     .background(selectedHabitColor)
+                    .foregroundColor(selectedHabitColor != nil ? .white : CustomColor.textColor)
             }
             
             
@@ -116,192 +120,239 @@ struct ContentView: View {
             ) {
                 HStack {
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor1
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor1)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor1
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor2
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor2)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor2
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor3
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor3)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor3
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor4
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor4)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor4
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor5
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor5)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor5
+                    }
                 }
+                
                 HStack {
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor6
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor6)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor6
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor7
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor7)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor7
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor8
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor8)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor8
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor9
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor9)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor9
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor10
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor10)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor10
+                    }
                 }
                 HStack {
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor11
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor11)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor11
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor12
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor12)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor12
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor13
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor13)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor13
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor14
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor14)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor14
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor15
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor15)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor15
+                    }
                 }
                 HStack {
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor16
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor16)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor16
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor17
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor17)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor17
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor18
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor18)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor18
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor19
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor19)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor19
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor20
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor20)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor20
+                    }
                 }
                 HStack {
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor21
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor21)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor21
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor22
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor22)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor22
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor23
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor23)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor23
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor24
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor24)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor24
+                    }
                     
                     Button("") {
-                        selectedHabitColor = CustomColor.habitColor25
                     }
                     .frame(width: 50, height: 50)
                     .background(CustomColor.habitColor25)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        selectedHabitColor = CustomColor.habitColor25
+                    }
                 }
             }
         }
         
-        
         // Code for weekly calendar
-        List {
-            
-        }
         
         // Code for setting time
         
