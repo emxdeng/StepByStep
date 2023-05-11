@@ -58,8 +58,8 @@ struct BeforeSettingBigGoalsView: View {
                 VStack(spacing: 20) {
                     // Create a horizontal ScrollView to display the calendar
                     ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 20) {
-                            ForEach(-5...5, id: \.self) { index in
+                        HStack(spacing: 20) {
+                            ForEach(-365...365, id: \.self) { index in
                                 VStack {
                                     Text(String(Date().addingTimeInterval(TimeInterval(86400 * index)).dayOfMonth()))
                                         .font(.system(size: 20))
@@ -79,13 +79,12 @@ struct BeforeSettingBigGoalsView: View {
                                 }
                             }
 
-                            Spacer().frame(width: 20)
+                            Spacer().frame(width: 100)
                         }
-                        .frame(width: UIScreen.main.bounds.width, height: 100)
+                        .frame(width: UIScreen.main.bounds.width + CGFloat(1000 * 20), height: 100)
                         .padding(.horizontal, 20)
                         .background(Color.white)
                     }
-
                     
                     Spacer()
                     
