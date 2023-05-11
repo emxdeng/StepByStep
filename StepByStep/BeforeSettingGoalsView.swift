@@ -10,52 +10,62 @@ import SwiftUI
 
 struct BeforeSettingGoalsView: View {
     var body: some View {
-        // Create a ZStack to place elements on top of each other
-        ZStack(alignment: .top) {
-            // Create a VStack to vertically stack the elements
-            VStack(spacing: 20) {
-                // Display the app icon image with specified size and aspect ratio
-                Image("warning@4x")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 180, height: 180)
-                
-                // Display text with custom font and color
-                Text("You haven't set any goals yet!")
-                    .font(Font.custom("TropicalAsianDEMO-Regular", size: 35))
-                    .foregroundColor(.black)
-                
-                // Display text with custom font and color
-                Text("Tap the button below to get started.")
-                    .font(Font.custom("TropicalAsianDEMO-Regular", size: 35))
-                    .foregroundColor(.black)
-            }
-            // Add vertical padding to the VStack
-            .padding(.vertical, 30.0)
-            
-            // Create a horizontal ScrollView to display the calendar
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 20) {
-                    // Use ForEach to display 7 nearest dates
-                    ForEach(0..<7) { index in
-                        VStack {
-                            Text(String(Date().addingTimeInterval(TimeInterval(86400 * index)).dayOfMonth()))
-                                .font(.system(size: 30))
-                                .fontWeight(.bold)
-                            Text(Date().addingTimeInterval(TimeInterval(86400 * index)).monthShort())
-                                .font(.system(size: 20))
-                                .foregroundColor(.secondary)
+        GeometryReader { geometry in
+            // Create a vertical ScrollView to display the calendar and warning message
+            ScrollView {
+                VStack(spacing: 50) {
+                    // Create a horizontal ScrollView to display the calendar
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 20) {
+                            // Use ForEach to display 7 nearest dates
+                            ForEach(0..<7) { index in
+                                VStack {
+                                    Text(String(Date().addingTimeInterval(TimeInterval(86400 * index)).dayOfMonth()))
+                                        .font(.system(size: 30))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(index == 0 ? .orange : .primary)
+                                    Text(Date().addingTimeInterval(TimeInterval(86400 * index)).monthShort())
+                                        .font(.system(size: 15))
+                                        .foregroundColor(.secondary)
+                                }
+                                .frame(width: geometry.size.width / 7 - 20, height: 80)
+                                .background(index == 0 ? Color.orange.opacity(0.3) : Color.gray.opacity(0.3))
+                                .cornerRadius(10)
+                            }
+
+                            Spacer(minLength: 20)
                         }
-                        .frame(width: UIScreen.main.bounds.width / 7 - 20, height: 80)
-                        .background(Color.gray.opacity(0.3))
-                        .cornerRadius(10)
+                        .frame(width: geometry.size.width, height: 100)
+                        .padding(.horizontal, 20)
                     }
                     
-                    Spacer()
-                        .frame(width: 20)
+                    // Display the app icon image with specified size and aspect ratio
+                    Image("warning 2@4x")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250, height: 250)
+
+                    // Display text with custom font and color
+                    Text("You haven't set any goals yet!\nTap the button below to get started.")
+                        .font(Font.custom("TropicalAsianDEMO-Regular", size: 35))
+                        .foregroundColor(.black)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 20)
+                
+                    // Display the button to add goals
+                    Button(action: {
+                        // Handle button tap action
+                        print("Button tapped!")
+                    }) {
+                        Image("addGoalButton")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 180, height: 180)
+                    }
+
+                    
                 }
-                .frame(width: UIScreen.main.bounds.width, height: 100)
-                .padding(.horizontal, 20)
+                .padding(.top, geometry.safeAreaInsets.top + 15.0) // Apply safe area insets
             }
         }
     }
