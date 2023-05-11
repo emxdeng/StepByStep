@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+ @main
 struct StepByStepApp: App {
     @State var currentView: AnyView = AnyView(AppLogoView())
 

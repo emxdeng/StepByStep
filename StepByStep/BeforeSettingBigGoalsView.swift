@@ -10,12 +10,48 @@ import SwiftUI
 
 struct BeforeSettingBigGoalsView: View {
     @State private var selectedIndex: Int?
+    @State private var selectedDate: Date = Date()
     
     var body: some View {
         GeometryReader { geometry in
             // Create a vertical ScrollView to display the calendar and warning message
             ScrollView {
-                VStack(spacing: 50) {
+                // Display the selected date
+                HStack {
+                    Text(selectedDate.monthShort() + ". " + selectedDate.dayOfMonth())
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
+                        .fontWeight(.bold)
+                        .padding(.leading, geometry.size.width * 0.05)
+                    
+                    Spacer()
+                    
+                    HStack(spacing: 10) {
+                        Button(action: {
+                            print("Button Statistic tapped")
+                            // add more button Statistic actions here
+                        }, label: {
+                            Image("statistic")
+                                .renderingMode(.original)
+                                .frame(width: 30, height: 30)
+                        })
+                        
+                        Button(action: {
+                            print("Button Settings tapped")
+                            // add more button Settings actions here
+                        }, label: {
+                            Image("settings")
+                                .renderingMode(.original)
+                                .frame(width: 30, height: 30)
+                        })
+                    }
+                    .padding(.leading, 5)
+                    .padding(.trailing, 5)
+                }
+                .padding(.top, 80)
+                .padding(.horizontal, 0)
+                
+                VStack(spacing: 5) {
                     // Create a horizontal ScrollView to display the calendar
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 20) {
@@ -35,6 +71,7 @@ struct BeforeSettingBigGoalsView: View {
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                                 .onTapGesture {
                                     selectedIndex = index
+                                    selectedDate = Date().addingTimeInterval(TimeInterval(86400 * index - 86400*89))
                                 }
                             }
                             
@@ -44,7 +81,6 @@ struct BeforeSettingBigGoalsView: View {
                         .padding(.horizontal, 20)
                         .background(Color.white)
                     }
-
                     
                     // Display the app icon image with specified size and aspect ratio
                     Image("warning 2@4x")
@@ -78,7 +114,6 @@ struct BeforeSettingBigGoalsView: View {
         }
     }
 }
-
 
 
 // Extension to format Date as short date
