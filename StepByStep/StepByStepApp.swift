@@ -20,7 +20,7 @@ struct StepByStepApp: App {
                             currentView = AnyView(GetStartedView().onAppear {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                                     withAnimation {
-                                        currentView = AnyView(BeforeSettingGoalsView())
+                                        currentView = AnyView(BeforeSettingBigGoalsView())
                                     }
                                 }
                             })

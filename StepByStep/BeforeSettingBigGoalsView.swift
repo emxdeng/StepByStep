@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct BeforeSettingGoalsView: View {
+struct BeforeSettingBigGoalsView: View {
+    @State private var selectedIndex: Int?
+    
     var body: some View {
         GeometryReader { geometry in
             // Create a vertical ScrollView to display the calendar and warning message
@@ -17,27 +19,32 @@ struct BeforeSettingGoalsView: View {
                     // Create a horizontal ScrollView to display the calendar
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 20) {
-                            // Use ForEach to display 7 nearest dates
-                            ForEach(0..<7) { index in
+                            ForEach(0..<90) { index in
                                 VStack {
-                                    Text(String(Date().addingTimeInterval(TimeInterval(86400 * index)).dayOfMonth()))
-                                        .font(.system(size: 30))
+                                    Text(String(Date().addingTimeInterval(TimeInterval(86400 * index - 86400*89)).dayOfMonth()))
+                                        .font(.system(size: 20))
                                         .fontWeight(.bold)
-                                        .foregroundColor(index == 0 ? .orange : .primary)
-                                    Text(Date().addingTimeInterval(TimeInterval(86400 * index)).monthShort())
-                                        .font(.system(size: 15))
-                                        .foregroundColor(.secondary)
+                                        .foregroundColor(index == 89 ? .orange : .gray)
+                                    Text(Date().addingTimeInterval(TimeInterval(86400 * index - 86400*89)).monthShort())
+                                        .font(.system(size: 12))
+                                        .foregroundColor(.gray)
                                 }
-                                .frame(width: geometry.size.width / 7 - 20, height: 80)
-                                .background(index == 0 ? Color.orange.opacity(0.3) : Color.gray.opacity(0.3))
+                                .frame(width: UIScreen.main.bounds.width / 7 - 10, height: 60)
+                                .background(selectedIndex == index ? Color.orange : Color.white)
                                 .cornerRadius(10)
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                                .onTapGesture {
+                                    selectedIndex = index
+                                }
                             }
-
-                            Spacer(minLength: 20)
+                            
+                            Spacer().frame(width: 20)
                         }
-                        .frame(width: geometry.size.width, height: 100)
+                        .frame(width: UIScreen.main.bounds.width, height: 100)
                         .padding(.horizontal, 20)
+                        .background(Color.white)
                     }
+
                     
                     // Display the app icon image with specified size and aspect ratio
                     Image("warning 2@4x")
@@ -47,7 +54,8 @@ struct BeforeSettingGoalsView: View {
 
                     // Display text with custom font and color
                     Text("You haven't set any goals yet!\nTap the button below to get started.")
-                        .font(Font.custom("TropicalAsianDEMO-Regular", size: 35))
+                        //.font(Font.custom("TropicalAsianDEMO-Regular", size: 35))
+                        .font(.system(size: 25))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 20)
@@ -70,6 +78,8 @@ struct BeforeSettingGoalsView: View {
         }
     }
 }
+
+
 
 // Extension to format Date as short date
 extension Date {
