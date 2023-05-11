@@ -48,10 +48,10 @@ struct BeforeSettingBigGoalsView: View {
                     .padding(.leading, 5)
                     .padding(.trailing, 5)
                 }
-                .padding(.top, 80)
+                .padding(.top, 60)
                 .padding(.horizontal, 0)
                 
-                VStack(spacing: 5) {
+                VStack(spacing: 20) {
                     // Create a horizontal ScrollView to display the calendar
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 20) {
@@ -65,7 +65,7 @@ struct BeforeSettingBigGoalsView: View {
                                         .font(.system(size: 12))
                                         .foregroundColor(.gray)
                                 }
-                                .frame(width: UIScreen.main.bounds.width / 7 - 10, height: 60)
+                                .frame(width: UIScreen.main.bounds.width / 7 - 10, height: 80)
                                 .background(selectedIndex == index ? Color.orange : Color.white)
                                 .cornerRadius(10)
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
@@ -81,6 +81,8 @@ struct BeforeSettingBigGoalsView: View {
                         .padding(.horizontal, 20)
                         .background(Color.white)
                     }
+                    
+                    Spacer()
                     
                     // Display the app icon image with specified size and aspect ratio
                     Image("warning 2@4x")
@@ -106,10 +108,7 @@ struct BeforeSettingBigGoalsView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 180, height: 180)
                     }
-
-                    
                 }
-                .padding(.top, geometry.safeAreaInsets.top + 15.0) // Apply safe area insets
             }
         }
     }
