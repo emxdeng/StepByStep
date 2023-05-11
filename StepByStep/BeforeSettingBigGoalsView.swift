@@ -10,7 +10,11 @@ import SwiftUI
 
 struct BeforeSettingBigGoalsView: View {
     @State private var selectedIndex: Int?
-    @State private var selectedDate: Date = Date()
+    @State private var selectedDate: Date = Date() // Initialize selectedDate to the current date
+    
+    init() {
+        _selectedDate = State(initialValue: Date())
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -55,32 +59,33 @@ struct BeforeSettingBigGoalsView: View {
                     // Create a horizontal ScrollView to display the calendar
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 20) {
-                            ForEach(0..<90) { index in
+                            ForEach(-5...5, id: \.self) { index in
                                 VStack {
-                                    Text(String(Date().addingTimeInterval(TimeInterval(86400 * index - 86400*89)).dayOfMonth()))
+                                    Text(String(Date().addingTimeInterval(TimeInterval(86400 * index)).dayOfMonth()))
                                         .font(.system(size: 20))
                                         .fontWeight(.bold)
-                                        .foregroundColor(index == 89 ? .orange : .gray)
-                                    Text(Date().addingTimeInterval(TimeInterval(86400 * index - 86400*89)).monthShort())
+                                        .foregroundColor(index == 0 ? .orange : .gray)
+                                    Text(Date().addingTimeInterval(TimeInterval(86400 * index)).monthShort())
                                         .font(.system(size: 12))
                                         .foregroundColor(.gray)
                                 }
                                 .frame(width: UIScreen.main.bounds.width / 7 - 10, height: 80)
-                                .background(selectedIndex == index ? Color.orange : Color.white)
+                                .background(selectedIndex == index + 5 ? Color.orange : Color.white)
                                 .cornerRadius(10)
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
                                 .onTapGesture {
-                                    selectedIndex = index
-                                    selectedDate = Date().addingTimeInterval(TimeInterval(86400 * index - 86400*89))
+                                    selectedIndex = index + 5
+                                    selectedDate = Date().addingTimeInterval(TimeInterval(86400 * index))
                                 }
                             }
-                            
+
                             Spacer().frame(width: 20)
                         }
                         .frame(width: UIScreen.main.bounds.width, height: 100)
                         .padding(.horizontal, 20)
                         .background(Color.white)
                     }
+
                     
                     Spacer()
                     
