@@ -18,6 +18,10 @@
 		C8DE0B8B2A07AA970041C402 /* StepByStepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B8A2A07AA970041C402 /* StepByStepTests.swift */; };
 		C8DE0B952A07AA970041C402 /* StepByStepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B942A07AA970041C402 /* StepByStepUITests.swift */; };
 		C8DE0B972A07AA970041C402 /* StepByStepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */; };
+		C8DE0BA62A090C4D0041C402 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */; };
+		C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */; };
+		C8DE0BAA2A0A02740041C402 /* goal_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0BA92A0A02740041C402 /* goal_data.json */; };
+		C8DE0BAC2A0A0C420041C402 /* user_habits.json in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0BAB2A0A0C420041C402 /* user_habits.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		C8DE0B902A07AA970041C402 /* StepByStepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepByStepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DE0B942A07AA970041C402 /* StepByStepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepUITests.swift; sourceTree = "<group>"; };
 		C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
+		C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitsView.swift; sourceTree = "<group>"; };
+		C8DE0BA92A0A02740041C402 /* goal_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goal_data.json; sourceTree = "<group>"; };
+		C8DE0BAB2A0A0C420041C402 /* user_habits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user_habits.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,8 @@
 		C8DE0B782A07AA940041C402 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				C8DE0BA42A07BCAE0041C402 /* Navigation */,
+				C8DE0BA32A07BC9A0041C402 /* Models */,
 				C21DC89B2A08CD7B00621FD3 /* Info.plist */,
 				C21DC8982A08C92200621FD3 /* Fonts */,
 				C8DE0B792A07AA940041C402 /* StepByStepApp.swift */,
@@ -147,6 +157,24 @@
 				C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */,
 			);
 			path = StepByStepUITests;
+			sourceTree = "<group>";
+		};
+		C8DE0BA32A07BC9A0041C402 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C8DE0BA92A0A02740041C402 /* goal_data.json */,
+				C8DE0BAB2A0A0C420041C402 /* user_habits.json */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C8DE0BA42A07BCAE0041C402 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */,
+				C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DE0B812A07AA970041C402 /* Preview Assets.xcassets in Resources */,
+				C8DE0BAC2A0A0C420041C402 /* user_habits.json in Resources */,
+				C8DE0BAA2A0A02740041C402 /* goal_data.json in Resources */,
 				C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */,
 				C8DE0B7E2A07AA970041C402 /* Assets.xcassets in Resources */,
 			);
@@ -280,6 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8DE0BA62A090C4D0041C402 /* AddGoalView.swift in Sources */,
+				C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */,
 				C8DE0B7C2A07AA940041C402 /* ContentView.swift in Sources */,
 				C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */,
 				C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */,

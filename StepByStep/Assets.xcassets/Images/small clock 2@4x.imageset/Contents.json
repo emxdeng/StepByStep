@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "small clock 2@4x.png",
       "idiom" : "universal"
     }
   ],

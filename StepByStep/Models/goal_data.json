@@ -1,0 +1,48 @@
+{
+    "Goals": [
+        {
+            "goal": "Staying fit",
+            "habits": "Exercise regularly;Drink 2L water everyday;Eat salad",
+            "image": "",
+            "imageWidth": "",
+            "imageHeight": ""
+        },
+        {
+            "goal": "Be a morning person",
+            "habits": "Sleep early;Eat breakfast;Have a morning routine",
+            "image": "",
+            "imageWidth": "",
+            "imageHeight": ""
+        },
+        {
+            "goal": "Learn something new",
+            "habits": "Practice regularly;Connect with community;Listen to podcast",
+            "image": "",
+            "imageWidth": "",
+            "imageHeight": ""
+        },
+        {
+            "goal": "Control my budget",
+            "habits": "Review budget;Review spending habits;Transfer money to savings",
+            "image": "",
+            "imageWidth": "",
+            "imageHeight": ""
+        },
+        {
+            "goal": "Stay mentally healthy",
+            "habits": "Meditate;Talk with loved ones;Walk outside",
+            "image": "",
+            "imageWidth": "",
+            "imageHeight": ""
+        },
+        {
+            "goal": "Be more productive",
+            "habits": "Take regular breaks;Sleep early;Review task list before bed",
+            "image": "",
+            "imageWidth": "",
+            "imageHeight": ""
+        }
+    ]
+}
+
+
