@@ -19,7 +19,7 @@ struct AddGoalView: View {
             
             VStack {
                 Text("Do you have something big you want to achieve?")
-                    .font(.headline)
+                    .font(.custom("Skia", size: 20))
             }.padding()
 
             
