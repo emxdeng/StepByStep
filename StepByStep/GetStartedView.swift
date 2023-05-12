@@ -20,13 +20,11 @@ struct GetStartedView: View {
                 // Create empty space between the two text elements
                 Spacer()
                 // Display a greeting text with custom font and color
-                Text("Hi There!")
-                    .font(Font.custom("TropicalAsianDEMO-Regular", size: 35))
+                Text("Hi There!\n\nLET'S HELP YOU GET STARTED")
+                    .font(Font.custom("TropicalAsianDEMO-Regular", size: 45))
                     .foregroundColor(Color(red: 0.94, green: 0.52, blue: 0.38))
-                // Display a heading text with custom font and color
-                Text("LET'S HELP YOU GET STARTED")
-                    .font(Font.custom("TropicalAsianDEMO-Regular", size: 35))
-                    .foregroundColor(Color(red: 0.94, green: 0.52, blue: 0.38))
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
                 Spacer()
             }
             // Add vertical padding to the VStack
