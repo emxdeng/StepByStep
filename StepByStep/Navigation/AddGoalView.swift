@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct AddGoalView: View {
     
@@ -40,7 +41,7 @@ struct AddGoalView: View {
                             .foregroundColor(.black)
                         Spacer()
                     }
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 
                 //Be a morning person
                 Button(action: {
@@ -57,7 +58,7 @@ struct AddGoalView: View {
                             .foregroundColor(.black)
                         Spacer()
                     }
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 
                 //Learn something new
                 Button(action: {
@@ -74,7 +75,7 @@ struct AddGoalView: View {
                             .foregroundColor(.black)
                         Spacer()
                     }
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 
                 //Control my budget
                 Button(action: {
@@ -91,7 +92,7 @@ struct AddGoalView: View {
                             .foregroundColor(.black)
                         Spacer()
                     }
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 
                 //Stay mentally healthy
                 Button(action: {
@@ -108,7 +109,7 @@ struct AddGoalView: View {
                             .foregroundColor(.black)
                         Spacer()
                     }
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 
                 //Be more productive
                 Button(action: {
@@ -125,7 +126,7 @@ struct AddGoalView: View {
                             .foregroundColor(.black)
                         Spacer()
                     }
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 
                 
                 
