@@ -385,11 +385,13 @@ struct ContentView: View {
                         }
                     }) {
                         Text(weekday)
-                            .font(Font.custom("Skia", size: 18))
+                            .font(.system(size: 14))
+                            .fontWeight(.bold)
                             .padding()
                             .foregroundColor(selectedDays.contains(weekday) ? .white : .black)
                             .background(selectedDays.contains(weekday) ? (selectedHabitColor ?? Color.blue) : Color.clear)
                             .cornerRadius(8)
+                            .fixedSize()
                     }
                 }
             }
