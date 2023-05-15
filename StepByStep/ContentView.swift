@@ -43,19 +43,18 @@ struct ContentView: View {
     @State private var selectedDate = Date()
     @State private var habitText = ""
     @State private var selectedHabitColor: Color? = nil
+    @State private var selectedDays: [String] = []
     
     var body: some View {
         
-        // Code for title of this page
+        // Code for title of this screen
         Text("Now let's set the specifics of\nyour goal and habit :)")
             .font(Font.custom("Skia", size: 22))
             .foregroundColor(CustomColor.textColor)
             .multilineTextAlignment(.leading)
             .lineLimit(2)
             
-        
         // Code for choosing the goal the habit is part of
-        
             VStack {
                 Text("My goal")
                     .font(.system(size: 22))
@@ -68,9 +67,7 @@ struct ContentView: View {
                 }
             }
         
-        
         // Code for setting the due date of the goal
-        
             VStack {
                 HStack {
                     Text("Due date")
@@ -85,7 +82,7 @@ struct ContentView: View {
                                 Text("")
                             }
                             
-                            Text("No due date")
+                            Text("(No due date)")
                                 .fontWeight(.regular)
                                 .foregroundColor(hasDueDate ? CustomColor.textColor : CustomColor.gray)
                                 .font(.system(size: 16))
@@ -93,11 +90,10 @@ struct ContentView: View {
                     }
                 }
                 if hasDueDate {
-                    DatePicker(selection: $selectedDate, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
+                    DatePicker(selection: $selectedDate, displayedComponents: [.date], label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
                         .background(CustomColor.lightOrange)
                 }
             }
-        
         
         // Code for 'helpful habit' that the user will input
         Form {
@@ -105,18 +101,19 @@ struct ContentView: View {
                 .font(.system(size: 22))
                 .fontWeight(.regular)
                 .foregroundColor(CustomColor.textColor)
+                .textCase(.none)
             ) {
                 TextField("Write your habit here...", text: $habitText)
                     .background(selectedHabitColor)
                     .foregroundColor(selectedHabitColor != nil ? .white : CustomColor.textColor)
             }
             
-            
             // Code for habit color palette
             Section(header: Text("Habit colour")
                 .font(.system(size: 22))
                 .fontWeight(.regular)
                 .foregroundColor(CustomColor.textColor)
+                .textCase(.none)
             ) {
                 HStack {
                     Button("") {
@@ -353,12 +350,50 @@ struct ContentView: View {
         }
         
         // Code for weekly calendar
+        VStack {
+            Text("How often?")
+                .font(.system(size: 22))
+                .fontWeight(.regular)
+                .foregroundColor(CustomColor.textColor)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .alignmentGuide(.leading) { _ in 0 }
+            WeekdayPicker(selectedDays: $selectedDays, selectedHabitColor: $selectedHabitColor)
+                    .padding()
+        }
         
         // Code for setting time
         
         // Code for setting amount of time or number of times per day
         
         // Code for 'save' button
+    }
+    
+    struct WeekdayPicker: View {
+        @Binding var selectedDays: [String]
+        @Binding var selectedHabitColor: Color?
+
+        let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+        var body: some View {
+            HStack(spacing: 4) {
+                ForEach(weekdays, id: \.self) { weekday in
+                    Button(action: {
+                        if selectedDays.contains(weekday) {
+                            selectedDays.removeAll { $0 == weekday }
+                        } else {
+                            selectedDays.append(weekday)
+                        }
+                    }) {
+                        Text(weekday)
+                            .font(Font.custom("Skia", size: 18))
+                            .padding()
+                            .foregroundColor(selectedDays.contains(weekday) ? .white : .black)
+                            .background(selectedDays.contains(weekday) ? (selectedHabitColor ?? Color.blue) : Color.clear)
+                            .cornerRadius(8)
+                    }
+                }
+            }
+        }
     }
     
     struct ContentView_Previews: PreviewProvider {
