@@ -11,6 +11,7 @@ import SwiftUI
 struct BeforeSettingBigGoalsView: View {
     @State private var selectedIndex: Int?
     @State private var selectedDate: Date = Date() // Initialize selectedDate to the current date
+    @State private var showAddGoalView = false // Track whether to show the AddGoalView
     
     init() {
         _selectedDate = State(initialValue: Date())
@@ -106,6 +107,8 @@ struct BeforeSettingBigGoalsView: View {
                     Button(action: {
                         // Handle button tap action
                         print("Button tapped!")
+                        // Transition to AddGoalView
+                        showAddGoalView = true
                     }) {
                         Image("addGoalButton")
                             .resizable()
@@ -114,6 +117,10 @@ struct BeforeSettingBigGoalsView: View {
                     }
                 }
             }
+        }
+        .navigationBarHidden(true)
+        .fullScreenCover(isPresented: $showAddGoalView) {
+            AddGoalView()
         }
     }
 }
