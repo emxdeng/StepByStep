@@ -1,17 +1,17 @@
 //
-//  BeforeSettingGoalsView.swift
+//  AfterSettingGoalView.swift
 //  StepByStep
 //
-//  Created by Janet on 10/5/2023.
+//  Created by Janet on 18/5/2023.
 //
 
 import Foundation
 import SwiftUI
 
-struct BeforeSettingBigGoalsView: View {
+struct AfterSettingGoalView: View {
     @State private var selectedIndex: Int?
     @State private var selectedDate: Date = Date() // Initialize selectedDate to the current date
-    @State private var showAddGoalView = false // Track whether to show the AddGoalView
+    @State private var showAddHabitsView = false // Track whether to show the AddGoalView
     
     init() {
         _selectedDate = State(initialValue: Date())
@@ -90,14 +90,13 @@ struct BeforeSettingBigGoalsView: View {
                     Spacer()
                     
                     // Display the app icon image with specified size and aspect ratio
-                    Image("warning 2@4x")
+                    Image("go@4x")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 250, height: 250)
 
                     // Display text with custom font and color
-                    Text("You haven't set any goals yet!\nTap the button below to get started.")
-                        //.font(Font.custom("TropicalAsianDEMO-Regular", size: 35))
+                    Text("Let's go set the specifics of your goal!\nTap the button below to get started.")
                         .font(.system(size: 25))
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
@@ -108,7 +107,7 @@ struct BeforeSettingBigGoalsView: View {
                         // Handle button tap action
                         print("Button tapped!")
                         // Transition to AddGoalView
-                        showAddGoalView = true
+                        showAddHabitsView = true
                     }) {
                         Image("addGoalButton")
                             .resizable()
@@ -119,30 +118,8 @@ struct BeforeSettingBigGoalsView: View {
             }
         }
         .navigationBarHidden(true)
-        .fullScreenCover(isPresented: $showAddGoalView) { // Transition to AddGoalView
-            AddGoalView()
+        .fullScreenCover(isPresented: $showAddHabitsView) { // Transition to AddGoalView
+            AddHabitsView()
         }
-    }
-}
-
-
-// Extension to format Date as short date
-extension Date {
-    func shortDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
-        return dateFormatter.string(from: self)
-    }
-    
-    func dayOfMonth() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d"
-        return dateFormatter.string(from: self)
-    }
-    
-    func monthShort() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM"
-        return dateFormatter.string(from: self)
     }
 }

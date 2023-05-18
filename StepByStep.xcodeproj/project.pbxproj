@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */; };
 		C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8932A08C63000621FD3 /* AppLogoView.swift */; };
 		C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8952A08C64000621FD3 /* GetStartedView.swift */; };
 		C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSettingGoalView.swift; sourceTree = "<group>"; };
 		C21DC8932A08C63000621FD3 /* AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
 		C21DC8952A08C64000621FD3 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TropicalAsianDEMO-Regular.ttf"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				C21DC8952A08C64000621FD3 /* GetStartedView.swift */,
 				C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */,
 				C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */,
+				C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */,
 				C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */,
 			);
 			path = Navigation;
@@ -311,6 +314,7 @@
 				C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */,
 				C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */,
 				C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */,
+				C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */,
 				C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */,
 				C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */,
 			);
