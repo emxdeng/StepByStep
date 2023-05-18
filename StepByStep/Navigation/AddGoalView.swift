@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddGoalView: View {
     
+    @State private var shouldShowAfterSettingGoalView = false
+    
     //Properties
     var body: some View {
         
@@ -27,6 +29,7 @@ struct AddGoalView: View {
                 
                 //Staying Fit
                 Button(action: {
+                    shouldShowAfterSettingGoalView = true
                     
                 }, label: {
                     HStack{
@@ -44,7 +47,7 @@ struct AddGoalView: View {
                 
                 //Be a morning person
                 Button(action: {
-                    
+                    shouldShowAfterSettingGoalView = true
                 }, label: {
                     HStack{
                         Spacer()
@@ -61,7 +64,7 @@ struct AddGoalView: View {
                 
                 //Learn something new
                 Button(action: {
-                    
+                    shouldShowAfterSettingGoalView = true
                 }, label: {
                     HStack{
                         Spacer()
@@ -78,7 +81,7 @@ struct AddGoalView: View {
                 
                 //Control my budget
                 Button(action: {
-                    
+                    shouldShowAfterSettingGoalView = true
                 }, label: {
                     HStack{
                         Spacer()
@@ -95,7 +98,7 @@ struct AddGoalView: View {
                 
                 //Stay mentally healthy
                 Button(action: {
-                    
+                    shouldShowAfterSettingGoalView = true
                 }, label: {
                     HStack{
                         Spacer()
@@ -112,7 +115,7 @@ struct AddGoalView: View {
                 
                 //Be more productive
                 Button(action: {
-                    
+                    shouldShowAfterSettingGoalView = true
                 }, label: {
                     HStack{
                         Spacer()
@@ -135,9 +138,10 @@ struct AddGoalView: View {
             
             
         }
-        .padding()
-        
-        
+        .navigationBarHidden(true)
+        .fullScreenCover(isPresented: $shouldShowAfterSettingGoalView) { // Transition to AddGoalView
+            AfterSettingGoalView()
+        }
     }
     
     //Methods
