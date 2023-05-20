@@ -12,6 +12,7 @@
 		C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */; };
 		C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */; };
 		C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D5F2A1906A3006583E7 /* OmenTextField */; };
+		C8602D632A190B24006583E7 /* LoadingButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D622A190B24006583E7 /* LoadingButton */; };
 		C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */; };
 		C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E72A18E41B004E8463 /* ParseUserData.swift */; };
 		C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B792A07AA940041C402 /* StepByStepApp.swift */; };
@@ -74,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */,
+				C8602D632A190B24006583E7 /* LoadingButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +205,7 @@
 			name = StepByStep;
 			packageProductDependencies = (
 				C8602D5F2A1906A3006583E7 /* OmenTextField */,
+				C8602D622A190B24006583E7 /* LoadingButton */,
 			);
 			productName = StepByStep;
 			productReference = C8DE0B762A07AA940041C402 /* StepByStep.app */;
@@ -278,6 +281,7 @@
 			mainGroup = C8DE0B6D2A07AA940041C402;
 			packageReferences = (
 				C8602D5E2A1906A3006583E7 /* XCRemoteSwiftPackageReference "OmenTextField" */,
+				C8602D612A190B24006583E7 /* XCRemoteSwiftPackageReference "LoadingButton" */,
 			);
 			productRefGroup = C8DE0B772A07AA940041C402 /* Products */;
 			projectDirPath = "";
@@ -671,6 +675,14 @@
 				minimumVersion = 0.0.6;
 			};
 		};
+		C8602D612A190B24006583E7 /* XCRemoteSwiftPackageReference "LoadingButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Changemin/LoadingButton";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -678,6 +690,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C8602D5E2A1906A3006583E7 /* XCRemoteSwiftPackageReference "OmenTextField" */;
 			productName = OmenTextField;
+		};
+		C8602D622A190B24006583E7 /* LoadingButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8602D612A190B24006583E7 /* XCRemoteSwiftPackageReference "LoadingButton" */;
+			productName = LoadingButton;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

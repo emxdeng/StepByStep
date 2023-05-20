@@ -72,6 +72,7 @@ struct HabitsView: View {
                     VStack {
                         Text("+")
                         Text("Or add your little step manually :)").font(.caption)
+
                         OmenTextField("Write your response here", text: .constant(""))
                             .padding(10)
                             .background(
