@@ -8,7 +8,12 @@
 import SwiftUI
 import Foundation
 
-struct AddGoalView: View {
+struct AddGoalView: View {-
+-
+    
+    @State private var shouldShowAfterSettingGoalView = false
+    
+    //Properties
     var body: some View {
         NavigationView {
             VStack {
@@ -36,6 +41,40 @@ struct AddGoalView: View {
                                 Spacer()
                             }
                         }).buttonStyle(RoundedButtonStyle())
+
+                //Staying Fit
+                Button(action: {
+                    shouldShowAfterSettingGoalView = true
+                    
+                }, label: {
+                    HStack{
+                        Spacer()
+                        Image("dumbbell@4x")
+                            .resizable()
+                            .frame(width: 50, height: 30)
+                        Spacer()
+                        Text("Staying fit")
+                            .font(.callout)
+                            .foregroundColor(.black)
+                        Spacer()
+                    }
+                })
+                
+                //Be a morning person
+                Button(action: {
+                    shouldShowAfterSettingGoalView = true
+                }, label: {
+                    HStack{
+                        Spacer()
+                        Image("sun@4x")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                        Spacer()
+                        Text("Be a morning person")
+                            .font(.callout)
+                            .foregroundColor(.black)
+                        Spacer()
+
                     }
 
 
@@ -137,12 +176,84 @@ struct AddGoalView: View {
                 Spacer()
 
 
+                Button(action: {
+                    shouldShowAfterSettingGoalView = true
+                }, label: {
+                    HStack{
+                        Spacer()
+                        Image("book@4x")
+                            .resizable()
+                            .frame(width: 30, height: 40)
+                        Spacer()
+                        Text("Learn something new")
+                            .font(.callout)
+                            .foregroundColor(.black)
+                        Spacer()
+                    }
+                })
+                
+                //Control my budget
+                Button(action: {
+                    shouldShowAfterSettingGoalView = true
+                }, label: {
+                    HStack{
+                        Spacer()
+                        Image("money@4x")
+                            .resizable()
+                            .frame(width: 30, height: 40)
+                        Spacer()
+                        Text("Control my budget")
+                            .font(.callout)
+                            .foregroundColor(.black)
+                        Spacer()
+                    }
+                })
+                
+                //Stay mentally healthy
+                Button(action: {
+                    shouldShowAfterSettingGoalView = true
+                }, label: {
+                    HStack{
+                        Spacer()
+                        Image("locked heart@4x")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                        Spacer()
+                        Text("Stay mentally healthy")
+                            .font(.callout)
+                            .foregroundColor(.black)
+                        Spacer()
+                    }
+                })
+                
+                //Be more productive
+                Button(action: {
+                    shouldShowAfterSettingGoalView = true
+                }, label: {
+                    HStack{
+                        Spacer()
+                        Image("cogwheel@4x")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                        Spacer()
+                        Text("Be more productive")
+                            .font(.callout)
+                            .foregroundColor(.black)
+                        Spacer()
+                    }
+                })
+                
+             
             }
                 .padding()
                 .navigationTitle("Add New Goal")
 
 
 
+        }
+        .navigationBarHidden(true)
+        .fullScreenCover(isPresented: $shouldShowAfterSettingGoalView) { // Transition to AddGoalView
+            AfterSettingGoalView()
         }
     }
 
