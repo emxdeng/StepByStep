@@ -12,18 +12,18 @@ struct AddHabitsView: View {
     //Properties
     var body: some View {
         
+        GeometryReader { geometry in
         
         //View
         VStack {
-            Spacer()
             
             VStack {
-                Spacer()
+                Spacer().frame(height:80)
                 Text("Here are some suggestions to help you achieve your goal!")
                     .font(.headline)
-                Spacer()
+                Spacer().frame(height:50)
                 Text("Tap one, then continue").font(.caption)
-                Spacer()
+                Spacer().frame(height:20)
             }.lineSpacing(5)
             
             
@@ -34,7 +34,7 @@ struct AddHabitsView: View {
                     
                 }, label: {
                     Text("Exercise regularly")
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 
                 Spacer()
                 
@@ -43,7 +43,7 @@ struct AddHabitsView: View {
                     
                 }, label: {
                     Text("Drink 2L water everyday")
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 
                 Spacer()
                 
@@ -52,22 +52,22 @@ struct AddHabitsView: View {
                     
                 }, label: {
                     Text("Eat salad")
-                })
+                }).buttonStyle(RoundedButtonStyle())
                 Spacer()
             
                 
             }
             
-            Spacer()
             
             VStack {
                 Text("+")
                 Text("Or add your little step manually :)").font(.caption)
-                TextField("Write your response here", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/).border(.secondary).padding()
+                TextField("Write your response here", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                    .textFieldStyle(RoundedTextFieldStyle())
                
             }
             
-            Spacer()
+            Spacer().frame(height:30)
             
             Button(action: {
                 
@@ -80,13 +80,13 @@ struct AddHabitsView: View {
                 }
             })
            
-            Spacer()
+            Spacer().frame(height: 100)
             
         }
         .padding()
         
 
-        
+        }
         
     }
     
