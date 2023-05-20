@@ -11,8 +11,8 @@
 		C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8952A08C64000621FD3 /* GetStartedView.swift */; };
 		C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */; };
 		C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */; };
+		C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D5F2A1906A3006583E7 /* OmenTextField */; };
 		C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */; };
-		C89D00E62A110747004E8463 /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E52A110747004E8463 /* TextFieldStyle.swift */; };
 		C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E72A18E41B004E8463 /* ParseUserData.swift */; };
 		C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B792A07AA940041C402 /* StepByStepApp.swift */; };
 		C8DE0B7C2A07AA940041C402 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B7B2A07AA940041C402 /* ContentView.swift */; };
@@ -51,7 +51,6 @@
 		C21DC89B2A08CD7B00621FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = StepByStep/Info.plist; sourceTree = SOURCE_ROOT; };
 		C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeSettingBigGoalsView.swift; sourceTree = "<group>"; };
 		C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
-		C89D00E52A110747004E8463 /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
 		C89D00E72A18E41B004E8463 /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
 		C8DE0B762A07AA940041C402 /* StepByStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepByStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DE0B792A07AA940041C402 /* StepByStepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepApp.swift; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +171,6 @@
 				C8DE0BA92A0A02740041C402 /* goal_data.json */,
 				C8DE0BAB2A0A0C420041C402 /* user_habits.json */,
 				C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */,
-				C89D00E52A110747004E8463 /* TextFieldStyle.swift */,
 				C89D00E72A18E41B004E8463 /* ParseUserData.swift */,
 			);
 			path = Models;
@@ -202,6 +201,9 @@
 			dependencies = (
 			);
 			name = StepByStep;
+			packageProductDependencies = (
+				C8602D5F2A1906A3006583E7 /* OmenTextField */,
+			);
 			productName = StepByStep;
 			productReference = C8DE0B762A07AA940041C402 /* StepByStep.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +276,9 @@
 				Base,
 			);
 			mainGroup = C8DE0B6D2A07AA940041C402;
+			packageReferences = (
+				C8602D5E2A1906A3006583E7 /* XCRemoteSwiftPackageReference "OmenTextField" */,
+			);
 			productRefGroup = C8DE0B772A07AA940041C402 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -326,7 +331,6 @@
 				C8DE0B7C2A07AA940041C402 /* ContentView.swift in Sources */,
 				C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */,
 				C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */,
-				C89D00E62A110747004E8463 /* TextFieldStyle.swift in Sources */,
 				C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */,
 				C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */,
 			);
@@ -657,6 +661,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C8602D5E2A1906A3006583E7 /* XCRemoteSwiftPackageReference "OmenTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kitlangton/OmenTextField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C8602D5F2A1906A3006583E7 /* OmenTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8602D5E2A1906A3006583E7 /* XCRemoteSwiftPackageReference "OmenTextField" */;
+			productName = OmenTextField;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C8DE0B6E2A07AA940041C402 /* Project object */;
 }

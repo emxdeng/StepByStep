@@ -21,7 +21,7 @@ struct AddGoalView: View {
                 Spacer().frame(height:50)
                 
                 NavigationLink(
-                    destination: AddHabitsView(selectedButton: "Staying fit")) {
+                    destination: AddHabitsView(selectedGoal: "Staying fit")) {
                         Button(action: {
                         }, label: {
                             HStack {
@@ -40,7 +40,7 @@ struct AddGoalView: View {
 
 
                 //Be a morning person
-                NavigationLink(destination: AddHabitsView(selectedButton: "Be a morning person")) {
+                NavigationLink(destination: AddHabitsView(selectedGoal: "Be a morning person")) {
                     Button(action: {
                     }, label: {
                         HStack {
@@ -58,7 +58,7 @@ struct AddGoalView: View {
                 }
 
                 //Learn something new
-                NavigationLink(destination: AddHabitsView(selectedButton: "Learn something new")) {
+                NavigationLink(destination: AddHabitsView(selectedGoal: "Learn something new")) {
                     Button(action: {
                     }, label: {
                         HStack {
@@ -77,7 +77,7 @@ struct AddGoalView: View {
 
 
                 //Control my budget
-                NavigationLink(destination: AddHabitsView(selectedButton: "Control my budget")) {
+                NavigationLink(destination: AddHabitsView(selectedGoal: "Control my budget")) {
                     Button(action: {
                     }, label: {
                         HStack {
@@ -96,7 +96,7 @@ struct AddGoalView: View {
 
 
                 //Stay mentally healthy
-                NavigationLink(destination: AddHabitsView(selectedButton: "Stay mentally healthy")) {
+                NavigationLink(destination: AddHabitsView(selectedGoal: "Stay mentally healthy")) {
                     Button(action: {
                     }, label: {
                         HStack {
@@ -115,7 +115,7 @@ struct AddGoalView: View {
 
 
                 //Be more productive
-                NavigationLink(destination: AddHabitsView(selectedButton: "Be more productive")) {
+                NavigationLink(destination: AddHabitsView(selectedGoal: "Be more productive")) {
                     Button(action: {
 
                     }, label: {
