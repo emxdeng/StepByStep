@@ -2,8 +2,8 @@
 //  ContentView.swift
 //  StepByStep
 //
-//  Created by Emily Deng on 7/5/2023.
-//  Modified by Sunjun (Lucie) Kwak on 8/5/2023.
+//  Created by Sunjun (Lucie) Kwak on 8/5/2023.
+//
 
 import SwiftUI
 
@@ -44,6 +44,8 @@ struct ContentView: View {
     @State private var habitText = ""
     @State private var selectedHabitColor: Color? = nil
     @State private var selectedDays: [String] = []
+    @State private var hasAlarmTime = true
+    @State private var selectedAlarmTime = Date()
     
     var body: some View {
         
@@ -68,32 +70,34 @@ struct ContentView: View {
             }
         
         // Code for setting the due date of the goal
-            VStack {
-                HStack {
-                    Text("Due date")
-                        .font(.system(size: 22))
-                        .fontWeight(.regular)
-                        .foregroundColor(hasDueDate ? CustomColor.textColor : CustomColor.gray)
-                        .multilineTextAlignment(.leading)
-                    
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Toggle(isOn: $hasDueDate) {
-                                Text("")
-                            }
-                            
-                            Text("(No due date)")
-                                .fontWeight(.regular)
-                                .foregroundColor(hasDueDate ? CustomColor.textColor : CustomColor.gray)
-                                .font(.system(size: 16))
+        VStack {
+            HStack {
+                Text("Due date")
+                    .font(.system(size: 22))
+                    .fontWeight(.regular)
+                    .foregroundColor(hasDueDate ? CustomColor.gray : CustomColor.textColor)
+                    .multilineTextAlignment(.leading)
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Toggle(isOn: $hasDueDate) {
+                            Text("")
                         }
+                        
+                        Text("(No due date)")
+                            .fontWeight(.regular)
+                            .foregroundColor(hasDueDate ? CustomColor.gray : CustomColor.textColor)
+                            .font(.system(size: 16))
                     }
                 }
-                if hasDueDate {
-                    DatePicker(selection: $selectedDate, displayedComponents: [.date], label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
-                        .background(CustomColor.lightOrange)
-                }
             }
+            if hasDueDate {
+                EmptyView() // Replace the DatePicker with an EmptyView
+            } else {
+                DatePicker(selection: $selectedDate, displayedComponents: [.date], label: { Text("Date") })
+                    .background(CustomColor.lightOrange)
+            }
+        }
         
         // Code for 'helpful habit' that the user will input
         Form {
@@ -362,6 +366,33 @@ struct ContentView: View {
         }
         
         // Code for setting time
+        VStack {
+            HStack {
+                Text("At what time?")
+                    .font(.system(size: 22))
+                    .fontWeight(.regular)
+                    .foregroundColor(hasAlarmTime ? CustomColor.gray : CustomColor.textColor)
+                    .multilineTextAlignment(.leading)
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Toggle(isOn: $hasAlarmTime) {
+                            Text("")
+                        }
+                        
+                        Text("(At any time of day)")
+                            .fontWeight(.regular)
+                            .foregroundColor(hasAlarmTime ? CustomColor.gray : CustomColor.textColor)
+                            .font(.system(size: 16))
+                    }
+                }
+            }
+            if hasAlarmTime {
+                EmptyView()
+            } else {
+                DatePicker(selection: $selectedAlarmTime, displayedComponents: [.hourAndMinute], label: { Text("") })
+            }
+        }
         
         // Code for setting amount of time or number of times per day
         
