@@ -15,6 +15,8 @@
 		C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D5F2A1906A3006583E7 /* OmenTextField */; };
 		C8602D632A190B24006583E7 /* LoadingButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D622A190B24006583E7 /* LoadingButton */; };
 		C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8602D642A19A513006583E7 /* HabitButtonStyle.swift */; };
+		C8602D682A1A46D9006583E7 /* GoalDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8602D662A1A46D9006583E7 /* GoalDataModel.xcdatamodeld */; };
+		C8602D6B2A1A486D006583E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8602D6A2A1A486D006583E7 /* CoreDataManager.swift */; };
 		C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */; };
 		C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E72A18E41B004E8463 /* ParseUserData.swift */; };
 		C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B792A07AA940041C402 /* StepByStepApp.swift */; };
@@ -54,6 +56,8 @@
 		C21DC89B2A08CD7B00621FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = StepByStep/Info.plist; sourceTree = SOURCE_ROOT; };
 		C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeSettingBigGoalsView.swift; sourceTree = "<group>"; };
 		C8602D642A19A513006583E7 /* HabitButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitButtonStyle.swift; sourceTree = "<group>"; };
+		C8602D672A1A46D9006583E7 /* GoalDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoalDataModel.xcdatamodel; sourceTree = "<group>"; };
+		C8602D6A2A1A486D006583E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		C89D00E72A18E41B004E8463 /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
 		C8DE0B762A07AA940041C402 /* StepByStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepByStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C8602D692A1A483A006583E7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C8602D6A2A1A486D006583E7 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		C8DE0B6D2A07AA940041C402 = {
 			isa = PBXGroup;
 			children = (
@@ -129,9 +141,11 @@
 		C8DE0B782A07AA940041C402 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				C8602D692A1A483A006583E7 /* Managers */,
 				C8DE0BA42A07BCAE0041C402 /* Navigation */,
 				C8DE0BA32A07BC9A0041C402 /* Models */,
 				C21DC89B2A08CD7B00621FD3 /* Info.plist */,
+				C8602D662A1A46D9006583E7 /* GoalDataModel.xcdatamodeld */,
 				C21DC8982A08C92200621FD3 /* Fonts */,
 				C8DE0B7D2A07AA970041C402 /* Assets.xcassets */,
 				C8DE0B7F2A07AA970041C402 /* Preview Content */,
@@ -336,6 +350,8 @@
 				C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */,
 				C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */,
 				C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */,
+				C8602D682A1A46D9006583E7 /* GoalDataModel.xcdatamodeld in Sources */,
+				C8602D6B2A1A486D006583E7 /* CoreDataManager.swift in Sources */,
 				C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */,
 				C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */,
 				C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */,
@@ -701,6 +717,19 @@
 			productName = LoadingButton;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C8602D662A1A46D9006583E7 /* GoalDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C8602D672A1A46D9006583E7 /* GoalDataModel.xcdatamodel */,
+			);
+			currentVersion = C8602D672A1A46D9006583E7 /* GoalDataModel.xcdatamodel */;
+			path = GoalDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C8DE0B6E2A07AA940041C402 /* Project object */;
 }
