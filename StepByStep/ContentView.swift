@@ -46,28 +46,34 @@ struct ContentView: View {
     @State private var selectedDays: [String] = []
     @State private var hasAlarmTime = true
     @State private var selectedAlarmTime = Date()
+    @State private var selectedHours = 0
+    @State private var selectedMinutes = 0
+    @State private var hideTimePickers = false
+
     
     var body: some View {
+        ScrollView {
         
         // Code for title of this screen
         Text("Now let's set the specifics of\nyour goal and habit :)")
-            .font(Font.custom("Skia", size: 22))
+                .font(.system(size: 24))
+                .fontWeight(.bold)
             .foregroundColor(CustomColor.textColor)
             .multilineTextAlignment(.leading)
             .lineLimit(2)
-            
+        
         // Code for choosing the goal the habit is part of
-            VStack {
-                Text("My goal")
-                    .font(.system(size: 22))
-                    .fontWeight(.regular)
-                    .foregroundColor(CustomColor.textColor)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .alignmentGuide(.leading) { _ in 0 }
-                DisclosureGroup(/*@START_MENU_TOKEN@*/"Group"/*@END_MENU_TOKEN@*/) {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
-                }
+        VStack {
+            Text("My goal")
+                .font(.system(size: 22))
+                .fontWeight(.regular)
+                .foregroundColor(CustomColor.textColor)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .alignmentGuide(.leading) { _ in 0 }
+            DisclosureGroup(/*@START_MENU_TOKEN@*/"Group"/*@END_MENU_TOKEN@*/) {
+                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
             }
+        }
         
         // Code for setting the due date of the goal
         VStack {
@@ -100,12 +106,12 @@ struct ContentView: View {
         }
         
         // Code for 'helpful habit' that the user will input
-        Form {
+        VStack {
             Section(header: Text("Helpful habit")
                 .font(.system(size: 22))
                 .fontWeight(.regular)
                 .foregroundColor(CustomColor.textColor)
-                .textCase(.none)
+                .frame(maxWidth: .infinity, alignment: .leading)
             ) {
                 TextField("Write your habit here...", text: $habitText)
                     .background(selectedHabitColor)
@@ -117,7 +123,7 @@ struct ContentView: View {
                 .font(.system(size: 22))
                 .fontWeight(.regular)
                 .foregroundColor(CustomColor.textColor)
-                .textCase(.none)
+                .frame(maxWidth: .infinity, alignment: .leading)
             ) {
                 HStack {
                     Button("") {
@@ -362,7 +368,6 @@ struct ContentView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .alignmentGuide(.leading) { _ in 0 }
             WeekdayPicker(selectedDays: $selectedDays, selectedHabitColor: $selectedHabitColor)
-                    .padding()
         }
         
         // Code for setting time
@@ -395,43 +400,82 @@ struct ContentView: View {
         }
         
         // Code for setting amount of time or number of times per day
+            VStack {
+                Text("For how long?")
+                    .font(.system(size: 22))
+                    .fontWeight(.regular)
+                    .foregroundColor(.black)
+                    .padding(.top) // Reduce top padding
+                
+                if !hideTimePickers {
+                    HStack {
+                        Picker("Hours", selection: $selectedHours) {
+                            ForEach(0..<4) { hour in
+                                Text("\(hour) hrs")
+                                    .tag(hour)
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(width: 100)
+                        
+                        Picker("Minutes", selection: $selectedMinutes) {
+                            ForEach(0..<12) { minute in
+                                let minuteInterval = minute * 5
+                                Text("\(minuteInterval) mins")
+                                    .tag(minuteInterval)
+                            }
+                        }
+                        .pickerStyle(WheelPickerStyle())
+                        .frame(width: 100)
+                    }
+                    .padding(.bottom) // Reduce bottom padding
+                }
+                
+                Toggle(isOn: $hideTimePickers) {
+                    Text("(Don't set this)")
+                }
+                .padding(.top)
+            }
         
         // Code for 'save' button
     }
-    
-    struct WeekdayPicker: View {
-        @Binding var selectedDays: [String]
-        @Binding var selectedHabitColor: Color?
-
-        let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-
-        var body: some View {
-            HStack(spacing: 4) {
-                ForEach(weekdays, id: \.self) { weekday in
-                    Button(action: {
-                        if selectedDays.contains(weekday) {
-                            selectedDays.removeAll { $0 == weekday }
-                        } else {
-                            selectedDays.append(weekday)
+}
+        
+        struct WeekdayPicker: View {
+            @Binding var selectedDays: [String]
+            @Binding var selectedHabitColor: Color?
+            
+            let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+            
+            var body: some View {
+                HStack(spacing: 8) {
+                    ForEach(weekdays, id: \.self) { weekday in
+                        Button(action: {
+                            if selectedDays.contains(weekday) {
+                                selectedDays.removeAll { $0 == weekday }
+                            } else {
+                                selectedDays.append(weekday)
+                            }
+                        }) {
+                            Text(weekday)
+                                .font(.system(size: 16))
+                                .fontWeight(.bold)
+                                .padding(EdgeInsets(top: 20, leading: 8, bottom: 20, trailing: 8))
+                                .foregroundColor(selectedDays.contains(weekday) ? .white : .black)
+                                .background(selectedDays.contains(weekday) ? (selectedHabitColor ?? Color.blue) : Color.clear)
+                                .cornerRadius(8)
+                                .fixedSize()
                         }
-                    }) {
-                        Text(weekday)
-                            .font(.system(size: 14))
-                            .fontWeight(.bold)
-                            .padding()
-                            .foregroundColor(selectedDays.contains(weekday) ? .white : .black)
-                            .background(selectedDays.contains(weekday) ? (selectedHabitColor ?? Color.blue) : Color.clear)
-                            .cornerRadius(8)
-                            .fixedSize()
                     }
                 }
             }
         }
-    }
     
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
+        
+        struct ContentView_Previews: PreviewProvider {
+            static var previews: some View {
+                ContentView()
+            }
         }
     }
-}
+
