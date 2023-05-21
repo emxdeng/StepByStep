@@ -50,7 +50,6 @@ struct ContentView: View {
     @State private var selectedMinutes = 0
     @State private var hideTimePickers = false
 
-    
     var body: some View {
         ScrollView {
         
@@ -98,7 +97,7 @@ struct ContentView: View {
                 }
             }
             if hasDueDate {
-                EmptyView() // Replace the DatePicker with an EmptyView
+                EmptyView()
             } else {
                 DatePicker(selection: $selectedDate, displayedComponents: [.date], label: { Text("Date") })
                     .background(CustomColor.lightOrange)
@@ -438,6 +437,17 @@ struct ContentView: View {
             }
         
         // Code for 'save' button
+            Button(action: {
+                // Action to perform when the button is tapped
+            }) {
+                Text("Save")
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(.white)
+            }
+            .frame(width: 120, height: 40)
+            .background(CustomColor.habitColor5)
+            .clipShape(Rectangle())
+            .cornerRadius(4)
     }
 }
         
