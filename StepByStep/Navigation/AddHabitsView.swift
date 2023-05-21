@@ -11,7 +11,6 @@ import OmenTextField
 struct AddHabitsView: View {
 
     @Binding var selectedGoal: String
-    
 
     //Properties
     var body: some View {
@@ -20,6 +19,7 @@ struct AddHabitsView: View {
         
     }
 }
+
 struct AddHabitsView_Previews: PreviewProvider {
     static var previews: some View {
         AddHabitsView(selectedGoal: .constant("Be a morning person"))
@@ -30,6 +30,8 @@ struct AddHabitsView_Previews: PreviewProvider {
 struct HabitsView: View {
 
     let selectedGoal: String
+    @State private var selectedHabit: String = ""
+
 
     //Properties
     var body: some View {
@@ -48,31 +50,35 @@ struct HabitsView: View {
                             .fixedSize(horizontal: false, vertical: true)
                             .multilineTextAlignment(.center)
                         Spacer().frame(height: 50)
-                        Text("Tap one, then continue").font(.caption)
+                        Text("Tap one, then continue")
                         Spacer().frame(height: 20)
                     }.lineSpacing(5)
 
 
-                    //Buttons
                     VStack {
                         ForEach(habits, id: \.self) { habit in
                             Button(action: {
-
-                            }, label: {
+                                selectedHabit = habit
+                            }) {
                                 Text(habit)
-                            }).buttonStyle(RoundedButtonStyle())
+                            }
+                            .buttonStyle(HabitButtonStyle(selected: $selectedHabit, identifier: habit))
+                            .padding(.vertical, 10) // Optional: Add padding between buttons
 
                             Spacer()
                         }
                     }
 
-
                     VStack {
                         Text("+")
-                        Text("Or add your little step manually :)").font(.caption)
-
+                        Text("Or add your little step manually :)")
+                        
                         OmenTextField("Write your response here", text: .constant(""))
                             .padding(10)
+                            .disabled(!selectedHabit.isEmpty)
+                            .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.05)
+                            .opacity(!selectedHabit.isEmpty ? 0.5 : 1.0)
+
                             .background(
                                 Color("LightOrange")
                                     .overlay(
@@ -81,7 +87,6 @@ struct HabitsView: View {
                                     )
                                     .cornerRadius(20)
                             )
-
                     }
 
                     Spacer().frame(height: 30)

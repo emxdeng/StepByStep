@@ -17,13 +17,13 @@ struct AddGoalView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Spacer().frame(height: 16)
+                Spacer().frame(height: 65)
                 
                 Text("Do you have something big you want to achieve?")
                     .font(.custom("Skia", size: 20))
                     .offset(x: -10)
                 
-                Spacer().frame(height: 50)
+                Spacer().frame(height: 30)
                 
                 // Staying Fit
                 Button(action: {
@@ -132,7 +132,7 @@ struct AddGoalView: View {
                     }
                 }).buttonStyle(RoundedButtonStyle())
                 
-                Spacer()
+                Spacer().frame(height: 65)
             }
             .padding()
             .navigationTitle("Add New Goal")
