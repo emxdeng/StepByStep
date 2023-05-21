@@ -10,19 +10,19 @@ import OmenTextField
 
 struct AddHabitsView: View {
 
-    let selectedGoal: String
+    @Binding var selectedGoal: String
+    
 
     //Properties
     var body: some View {
 
         HabitsView(selectedGoal: selectedGoal)
-
+        
     }
 }
-
 struct AddHabitsView_Previews: PreviewProvider {
     static var previews: some View {
-        AddHabitsView(selectedGoal: "Be a morning person")
+        AddHabitsView(selectedGoal: .constant("Be a morning person"))
             .previewDevice("iPhone 14 Pro")
     }
 }
@@ -34,7 +34,6 @@ struct HabitsView: View {
     //Properties
     var body: some View {
         GeometryReader { geometry in
-
 
             NavigationView {
                 VStack {
@@ -65,7 +64,6 @@ struct HabitsView: View {
 
                             Spacer()
                         }
-
                     }
 
 

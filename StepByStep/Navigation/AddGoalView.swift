@@ -11,6 +11,7 @@ import Foundation
 struct AddGoalView: View {
     
     @State private var shouldShowAfterSettingGoalView = false
+    @State private var selectedGoal = ""
     
     // Properties
     var body: some View {
@@ -27,6 +28,7 @@ struct AddGoalView: View {
                 // Staying Fit
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
+                    selectedGoal = "Staying fit"
                 }, label: {
                     HStack {
                         Spacer()
@@ -43,6 +45,7 @@ struct AddGoalView: View {
                 // Be a morning person
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
+                    selectedGoal = "Be a morning person"
                 }, label: {
                     HStack{
                         Spacer()
@@ -60,6 +63,7 @@ struct AddGoalView: View {
                 // Learn something new
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
+                    selectedGoal = "Learn something new"
                 }, label: {
                     HStack {
                         Spacer()
@@ -77,6 +81,7 @@ struct AddGoalView: View {
                 // Control my budget
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
+                    selectedGoal = "Control my budget"
                 }, label: {
                     HStack {
                         Spacer()
@@ -90,9 +95,11 @@ struct AddGoalView: View {
                         Spacer()
                     }
                 }).buttonStyle(RoundedButtonStyle())
+                
                 // Stay mentally healthy
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
+                    selectedGoal = "Stay mentally healthy"
                 }, label: {
                     HStack {
                         Spacer()
@@ -110,6 +117,7 @@ struct AddGoalView: View {
                 // Be more productive
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
+                    selectedGoal = "Be more productive"
                 }, label: {
                     HStack {
                         Spacer()
@@ -130,7 +138,7 @@ struct AddGoalView: View {
             .navigationTitle("Add New Goal")
             .navigationBarHidden(true)
             .fullScreenCover(isPresented: $shouldShowAfterSettingGoalView) {
-                AfterSettingGoalView()
+                AddHabitsView(selectedGoal: $selectedGoal)
             }
         }
     }
