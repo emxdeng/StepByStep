@@ -32,7 +32,6 @@ struct HabitsView: View {
     let selectedGoal: String
     @State private var selectedHabit: String = ""
 
-
     //Properties
     var body: some View {
         GeometryReader { geometry in
