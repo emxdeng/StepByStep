@@ -46,3 +46,11 @@ struct AppLogoView: View {
     */
     
 }
+
+
+struct AppLogoView_Preview: PreviewProvider {
+    static var previews: some View {
+        AppLogoView()
+            .previewDevice("iPhone 14 Pro")
+    }
+}

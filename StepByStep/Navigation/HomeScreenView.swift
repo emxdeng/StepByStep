@@ -32,7 +32,12 @@ struct HomeScreenView: View {
 }
 
 
-
+struct HomeScreenView_Preview: PreviewProvider {
+    static var previews: some View {
+        HomeScreenView(habitText: .constant("7DA3D6"))
+            .previewDevice("iPhone 14 Pro")
+    }
+}
 
 
 

@@ -123,3 +123,11 @@ struct AfterSettingGoalView: View {
         }
     }
 }
+
+struct AfterSettingGoalView_Preview: PreviewProvider {
+    static var previews: some View {
+        AfterSettingGoalView()
+            .previewDevice("iPhone 14 Pro")
+    }
+}
+

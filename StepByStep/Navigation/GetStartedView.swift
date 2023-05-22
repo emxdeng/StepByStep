@@ -33,3 +33,10 @@ struct GetStartedView: View {
     }
 }
 
+
+struct GetStartedView_Preview: PreviewProvider {
+    static var previews: some View {
+        GetStartedView()
+            .previewDevice("iPhone 14 Pro")
+    }
+}
