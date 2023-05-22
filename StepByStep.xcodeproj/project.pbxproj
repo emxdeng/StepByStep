@@ -10,10 +10,10 @@
 		C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */; };
 		C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8932A08C63000621FD3 /* AppLogoView.swift */; };
 		C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8952A08C64000621FD3 /* GetStartedView.swift */; };
-		C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */; };
 		C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */; };
 		C27F527D2A1B2EBA0032863B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F527C2A1B2EB90032863B /* ContentView.swift */; };
 		C27F527F2A1B4A060032863B /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F527E2A1B4A060032863B /* HomeScreenView.swift */; };
+		C82FB2472A1B9518008C5BA9 /* TropicalAsianDEMO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82FB2462A1B9518008C5BA9 /* TropicalAsianDEMO-Regular.ttf */; };
 		C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D5F2A1906A3006583E7 /* OmenTextField */; };
 		C8602D632A190B24006583E7 /* LoadingButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D622A190B24006583E7 /* LoadingButton */; };
 		C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8602D642A19A513006583E7 /* HabitButtonStyle.swift */; };
@@ -52,11 +52,10 @@
 		C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSettingGoalView.swift; sourceTree = "<group>"; };
 		C21DC8932A08C63000621FD3 /* AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
 		C21DC8952A08C64000621FD3 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
-		C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TropicalAsianDEMO-Regular.ttf"; sourceTree = "<group>"; };
-		C21DC89B2A08CD7B00621FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = StepByStep/Info.plist; sourceTree = SOURCE_ROOT; };
 		C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeSettingBigGoalsView.swift; sourceTree = "<group>"; };
 		C27F527C2A1B2EB90032863B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C27F527E2A1B4A060032863B /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		C82FB2462A1B9518008C5BA9 /* TropicalAsianDEMO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TropicalAsianDEMO-Regular.ttf"; sourceTree = "<group>"; };
 		C8602D642A19A513006583E7 /* HabitButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitButtonStyle.swift; sourceTree = "<group>"; };
 		C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		C89D00E72A18E41B004E8463 /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
@@ -102,12 +101,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C21DC8982A08C92200621FD3 /* Fonts */ = {
+		C21DC8982A08C92200621FD3 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */,
+				C82FB2462A1B9518008C5BA9 /* TropicalAsianDEMO-Regular.ttf */,
 			);
-			path = Fonts;
+			path = Font;
 			sourceTree = "<group>";
 		};
 		C8DE0B6D2A07AA940041C402 = {
@@ -135,8 +134,7 @@
 			children = (
 				C8DE0BA42A07BCAE0041C402 /* Navigation */,
 				C8DE0BA32A07BC9A0041C402 /* Models */,
-				C21DC89B2A08CD7B00621FD3 /* Info.plist */,
-				C21DC8982A08C92200621FD3 /* Fonts */,
+				C21DC8982A08C92200621FD3 /* Font */,
 				C8DE0B7D2A07AA970041C402 /* Assets.xcassets */,
 				C8DE0B7F2A07AA970041C402 /* Preview Content */,
 			);
@@ -308,10 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82FB2472A1B9518008C5BA9 /* TropicalAsianDEMO-Regular.ttf in Resources */,
 				C8DE0B812A07AA970041C402 /* Preview Assets.xcassets in Resources */,
 				C8DE0BAC2A0A0C420041C402 /* user_habits.json in Resources */,
 				C8DE0BAA2A0A02740041C402 /* goal_data.json in Resources */,
-				C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */,
 				C8DE0B7E2A07AA970041C402 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,7 +508,7 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = StepByStep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -541,6 +539,7 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StepByStep/Info.plist;
 				"INFOPLIST_FILE[sdk=*]" = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
