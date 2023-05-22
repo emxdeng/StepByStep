@@ -31,6 +31,8 @@ struct HabitsView: View {
 
     let selectedGoal: String
     @State private var selectedHabit: String = ""
+    
+    @State private var showContentView = false // Track whether to show the ContentView
 
     //Properties
     var body: some View {
@@ -90,9 +92,9 @@ struct HabitsView: View {
 
                     Spacer().frame(height: 30)
 
-                    //need to add a navigation link here
+                    // Transit to Contentview
                     Button(action: {
-
+                        showContentView = true
                     }, label: {
                         VStack {
                             Image(systemName: "arrow.right.circle")
@@ -107,6 +109,10 @@ struct HabitsView: View {
                 }
                     .padding()
             }
+        }
+        .navigationBarHidden(true)
+        .fullScreenCover(isPresented: $showContentView) { // Transition to ContentView
+            ContentView()
         }
     }
 }
