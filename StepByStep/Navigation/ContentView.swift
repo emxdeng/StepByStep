@@ -41,7 +41,7 @@ struct CustomColor {
 struct ContentView: View {
     @State private var hasDueDate = true
     @State private var selectedDate = Date()
-    @State private var habitText = ""
+    @State private var habitText = "" // pass habit text to the HomeScreenView
     @State private var selectedHabitColor: Color? = nil
     @State private var selectedDays: [String] = []
     @State private var hasAlarmTime = true
@@ -51,6 +51,8 @@ struct ContentView: View {
     @State private var hideTimePickers = false
     
     @Binding var selectedGoal: String
+    
+    @State private var shouldShowHomeScreenView = false // transit to HomeScreenView
 
     var body: some View {
         ScrollView {
@@ -441,9 +443,10 @@ struct ContentView: View {
                 .padding(.top)
             }
         
-        // Code for 'save' button
+            // Code for 'save' button
             Button(action: {
                 // Action to perform when the button is tapped
+                shouldShowHomeScreenView = true
             }) {
                 Text("Save")
                     .font(.system(size: 18, weight: .bold))
@@ -454,6 +457,10 @@ struct ContentView: View {
             .clipShape(Rectangle())
             .cornerRadius(4)
     }
+        .navigationBarHidden(true)
+        .fullScreenCover(isPresented: $shouldShowHomeScreenView) { // Transition to the HomeScreenView
+            HomeScreenView(habitText: $habitText, habitColor: selectedHabitColor) // Pass habit text and color to the HomeScreenView
+        }
 }
         
         struct WeekdayPicker: View {
