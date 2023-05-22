@@ -1,0 +1,38 @@
+{
+    "user_habits": [
+        {
+            "goal": "Staying fit",
+            "habit": "Exercise regularly",
+            "color": "7DA3D6",
+            "creationDate": "19/05/2023",
+            "timeOfDay": "1430",
+            "dueDate": "31/12/2023",
+            "daysOfWeek": "Tuesday;Saturday;Sunday",
+            "howLongInMinutes": "120",
+            "howManyTimesPerDay": "2"
+        },
+        {
+            "goal": "Be a morning person",
+            "habit": "Have a morning routine",
+            "color": "ECC268",
+            "creationDate": "19/05/2023",
+            "timeOfDay": "",
+            "dueDate": "",
+            "daysOfWeek": "Monday;Friday",
+            "howLongInMinutes": "",
+            "howManyTimesPerDay": ""
+        },
+        {
+                        //
+        },
+        {
+                       //
+        },
+        {
+                        //
+        },
+        {
+                        //
+        }
+    ]
+}

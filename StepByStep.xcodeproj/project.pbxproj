@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */; };
+		C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8932A08C63000621FD3 /* AppLogoView.swift */; };
+		C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8952A08C64000621FD3 /* GetStartedView.swift */; };
+		C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */; };
+		C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */; };
+		C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D5F2A1906A3006583E7 /* OmenTextField */; };
+		C8602D632A190B24006583E7 /* LoadingButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D622A190B24006583E7 /* LoadingButton */; };
+		C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8602D642A19A513006583E7 /* HabitButtonStyle.swift */; };
+		C8602D682A1A46D9006583E7 /* GoalDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8602D662A1A46D9006583E7 /* GoalDataModel.xcdatamodeld */; };
+		C8602D6B2A1A486D006583E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8602D6A2A1A486D006583E7 /* CoreDataManager.swift */; };
+		C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */; };
+		C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E72A18E41B004E8463 /* ParseUserData.swift */; };
 		C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B792A07AA940041C402 /* StepByStepApp.swift */; };
-		C8DE0B7C2A07AA940041C402 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B7B2A07AA940041C402 /* ContentView.swift */; };
 		C8DE0B7E2A07AA970041C402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0B7D2A07AA970041C402 /* Assets.xcassets */; };
 		C8DE0B812A07AA970041C402 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0B802A07AA970041C402 /* Preview Assets.xcassets */; };
 		C8DE0B8B2A07AA970041C402 /* StepByStepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B8A2A07AA970041C402 /* StepByStepTests.swift */; };
 		C8DE0B952A07AA970041C402 /* StepByStepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B942A07AA970041C402 /* StepByStepUITests.swift */; };
 		C8DE0B972A07AA970041C402 /* StepByStepUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */; };
+		C8DE0BA62A090C4D0041C402 /* AddGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */; };
+		C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */; };
+		C8DE0BAA2A0A02740041C402 /* goal_data.json in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0BA92A0A02740041C402 /* goal_data.json */; };
+		C8DE0BAC2A0A0C420041C402 /* user_habits.json in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0BAB2A0A0C420041C402 /* user_habits.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +49,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSettingGoalView.swift; sourceTree = "<group>"; };
+		C21DC8932A08C63000621FD3 /* AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
+		C21DC8952A08C64000621FD3 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TropicalAsianDEMO-Regular.ttf"; sourceTree = "<group>"; };
+		C21DC89B2A08CD7B00621FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = StepByStep/Info.plist; sourceTree = SOURCE_ROOT; };
+		C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeSettingBigGoalsView.swift; sourceTree = "<group>"; };
+		C8602D642A19A513006583E7 /* HabitButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitButtonStyle.swift; sourceTree = "<group>"; };
+		C8602D672A1A46D9006583E7 /* GoalDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoalDataModel.xcdatamodel; sourceTree = "<group>"; };
+		C8602D6A2A1A486D006583E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
+		C89D00E72A18E41B004E8463 /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
 		C8DE0B762A07AA940041C402 /* StepByStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepByStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DE0B792A07AA940041C402 /* StepByStepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepApp.swift; sourceTree = "<group>"; };
-		C8DE0B7B2A07AA940041C402 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C8DE0B7D2A07AA970041C402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8DE0B802A07AA970041C402 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C8DE0B862A07AA970041C402 /* StepByStepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepByStepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +69,10 @@
 		C8DE0B902A07AA970041C402 /* StepByStepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepByStepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DE0B942A07AA970041C402 /* StepByStepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepUITests.swift; sourceTree = "<group>"; };
 		C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalView.swift; sourceTree = "<group>"; };
+		C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitsView.swift; sourceTree = "<group>"; };
+		C8DE0BA92A0A02740041C402 /* goal_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = goal_data.json; sourceTree = "<group>"; };
+		C8DE0BAB2A0A0C420041C402 /* user_habits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user_habits.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */,
+				C8602D632A190B24006583E7 /* LoadingButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C21DC8982A08C92200621FD3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C8602D692A1A483A006583E7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C8602D6A2A1A486D006583E7 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		C8DE0B6D2A07AA940041C402 = {
 			isa = PBXGroup;
 			children = (
@@ -94,10 +141,12 @@
 		C8DE0B782A07AA940041C402 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				C8602D692A1A483A006583E7 /* Managers */,
 				C8DE0BA42A07BCAE0041C402 /* Navigation */,
 				C8DE0BA32A07BC9A0041C402 /* Models */,
-				C8DE0B792A07AA940041C402 /* StepByStepApp.swift */,
-				C8DE0B7B2A07AA940041C402 /* ContentView.swift */,
+				C21DC89B2A08CD7B00621FD3 /* Info.plist */,
+				C8602D662A1A46D9006583E7 /* GoalDataModel.xcdatamodeld */,
+				C21DC8982A08C92200621FD3 /* Fonts */,
 				C8DE0B7D2A07AA970041C402 /* Assets.xcassets */,
 				C8DE0B7F2A07AA970041C402 /* Preview Content */,
 			);
@@ -132,6 +181,11 @@
 		C8DE0BA32A07BC9A0041C402 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C8DE0BA92A0A02740041C402 /* goal_data.json */,
+				C8DE0BAB2A0A0C420041C402 /* user_habits.json */,
+				C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */,
+				C8602D642A19A513006583E7 /* HabitButtonStyle.swift */,
+				C89D00E72A18E41B004E8463 /* ParseUserData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +193,13 @@
 		C8DE0BA42A07BCAE0041C402 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				C8DE0B792A07AA940041C402 /* StepByStepApp.swift */,
+				C21DC8932A08C63000621FD3 /* AppLogoView.swift */,
+				C21DC8952A08C64000621FD3 /* GetStartedView.swift */,
+				C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */,
+				C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */,
+				C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */,
+				C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -159,6 +220,10 @@
 			dependencies = (
 			);
 			name = StepByStep;
+			packageProductDependencies = (
+				C8602D5F2A1906A3006583E7 /* OmenTextField */,
+				C8602D622A190B24006583E7 /* LoadingButton */,
+			);
 			productName = StepByStep;
 			productReference = C8DE0B762A07AA940041C402 /* StepByStep.app */;
 			productType = "com.apple.product-type.application";
@@ -231,6 +296,10 @@
 				Base,
 			);
 			mainGroup = C8DE0B6D2A07AA940041C402;
+			packageReferences = (
+				C8602D5E2A1906A3006583E7 /* XCRemoteSwiftPackageReference "OmenTextField" */,
+				C8602D612A190B24006583E7 /* XCRemoteSwiftPackageReference "LoadingButton" */,
+			);
 			productRefGroup = C8DE0B772A07AA940041C402 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -248,6 +317,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DE0B812A07AA970041C402 /* Preview Assets.xcassets in Resources */,
+				C8DE0BAC2A0A0C420041C402 /* user_habits.json in Resources */,
+				C8DE0BAA2A0A02740041C402 /* goal_data.json in Resources */,
+				C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */,
 				C8DE0B7E2A07AA970041C402 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,8 +345,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8DE0B7C2A07AA940041C402 /* ContentView.swift in Sources */,
+				C8DE0BA62A090C4D0041C402 /* AddGoalView.swift in Sources */,
+				C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */,
+				C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */,
+				C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */,
+				C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */,
+				C8602D682A1A46D9006583E7 /* GoalDataModel.xcdatamodeld in Sources */,
+				C8602D6B2A1A486D006583E7 /* CoreDataManager.swift in Sources */,
+				C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */,
 				C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */,
+				C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */,
+				C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */,
+				C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,11 +518,13 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,11 +549,13 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -599,6 +685,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C8602D5E2A1906A3006583E7 /* XCRemoteSwiftPackageReference "OmenTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kitlangton/OmenTextField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.6;
+			};
+		};
+		C8602D612A190B24006583E7 /* XCRemoteSwiftPackageReference "LoadingButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Changemin/LoadingButton";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C8602D5F2A1906A3006583E7 /* OmenTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8602D5E2A1906A3006583E7 /* XCRemoteSwiftPackageReference "OmenTextField" */;
+			productName = OmenTextField;
+		};
+		C8602D622A190B24006583E7 /* LoadingButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8602D612A190B24006583E7 /* XCRemoteSwiftPackageReference "LoadingButton" */;
+			productName = LoadingButton;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C8602D662A1A46D9006583E7 /* GoalDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C8602D672A1A46D9006583E7 /* GoalDataModel.xcdatamodel */,
+			);
+			currentVersion = C8602D672A1A46D9006583E7 /* GoalDataModel.xcdatamodel */;
+			path = GoalDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C8DE0B6E2A07AA940041C402 /* Project object */;
 }
