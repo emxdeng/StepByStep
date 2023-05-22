@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */; };
 		C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8932A08C63000621FD3 /* AppLogoView.swift */; };
 		C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8952A08C64000621FD3 /* GetStartedView.swift */; };
 		C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */; };
 		C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */; };
+		C27F527D2A1B2EBA0032863B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F527C2A1B2EB90032863B /* ContentView.swift */; };
+		C27F527F2A1B4A060032863B /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F527E2A1B4A060032863B /* HomeScreenView.swift */; };
+		C27F52812A1B66290032863B /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F52802A1B66290032863B /* HabitViewModel.swift */; };
 		C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D5F2A1906A3006583E7 /* OmenTextField */; };
 		C8602D632A190B24006583E7 /* LoadingButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D622A190B24006583E7 /* LoadingButton */; };
 		C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8602D642A19A513006583E7 /* HabitButtonStyle.swift */; };
@@ -49,12 +51,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSettingGoalView.swift; sourceTree = "<group>"; };
 		C21DC8932A08C63000621FD3 /* AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
 		C21DC8952A08C64000621FD3 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TropicalAsianDEMO-Regular.ttf"; sourceTree = "<group>"; };
 		C21DC89B2A08CD7B00621FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = StepByStep/Info.plist; sourceTree = SOURCE_ROOT; };
 		C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeSettingBigGoalsView.swift; sourceTree = "<group>"; };
+		C27F527C2A1B2EB90032863B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C27F527E2A1B4A060032863B /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		C27F52802A1B66290032863B /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		C831AF2D2A1B9C86003E0E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C8602D642A19A513006583E7 /* HabitButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitButtonStyle.swift; sourceTree = "<group>"; };
 		C8602D672A1A46D9006583E7 /* GoalDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoalDataModel.xcdatamodel; sourceTree = "<group>"; };
 		C8602D6A2A1A486D006583E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -141,6 +146,7 @@
 		C8DE0B782A07AA940041C402 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				C831AF2D2A1B9C86003E0E72 /* Info.plist */,
 				C8602D692A1A483A006583E7 /* Managers */,
 				C8DE0BA42A07BCAE0041C402 /* Navigation */,
 				C8DE0BA32A07BC9A0041C402 /* Models */,
@@ -184,6 +190,7 @@
 				C8DE0BA92A0A02740041C402 /* goal_data.json */,
 				C8DE0BAB2A0A0C420041C402 /* user_habits.json */,
 				C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */,
+				C27F52802A1B66290032863B /* HabitViewModel.swift */,
 				C8602D642A19A513006583E7 /* HabitButtonStyle.swift */,
 				C89D00E72A18E41B004E8463 /* ParseUserData.swift */,
 			);
@@ -198,8 +205,9 @@
 				C21DC8952A08C64000621FD3 /* GetStartedView.swift */,
 				C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */,
 				C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */,
-				C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */,
 				C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */,
+				C27F527C2A1B2EB90032863B /* ContentView.swift */,
+				C27F527E2A1B4A060032863B /* HomeScreenView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -346,7 +354,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DE0BA62A090C4D0041C402 /* AddGoalView.swift in Sources */,
+				C27F527D2A1B2EBA0032863B /* ContentView.swift in Sources */,
 				C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */,
+				C27F527F2A1B4A060032863B /* HomeScreenView.swift in Sources */,
 				C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */,
 				C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */,
 				C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */,
@@ -354,9 +364,9 @@
 				C8602D6B2A1A486D006583E7 /* CoreDataManager.swift in Sources */,
 				C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */,
 				C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */,
-				C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */,
 				C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */,
 				C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */,
+				C27F52812A1B66290032863B /* HabitViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +528,7 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "";
+				INFOPLIST_FILE = StepByStep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -549,6 +559,7 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StepByStep/Info.plist;
 				"INFOPLIST_FILE[sdk=*]" = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
