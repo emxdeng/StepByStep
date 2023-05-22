@@ -49,6 +49,7 @@ struct ContentView: View {
     @State private var selectedHours = 0
     @State private var selectedMinutes = 0
     @State private var hideTimePickers = false
+    @StateObject var habitViewModel = HabitViewModel()
     
     @Binding var selectedGoal: String
     
@@ -447,6 +448,8 @@ struct ContentView: View {
             Button(action: {
                 // Action to perform when the button is tapped
                 shouldShowHomeScreenView = true
+                habitViewModel.saveHabit(habitText) // Save the habit text to the ViewModel
+                print(habitViewModel.habits) // Print the habits array
             }) {
                 Text("Save")
                     .font(.system(size: 18, weight: .bold))
@@ -457,9 +460,10 @@ struct ContentView: View {
             .clipShape(Rectangle())
             .cornerRadius(4)
     }
+        .environmentObject(habitViewModel) // Pass the ViewModel to the environment
         .navigationBarHidden(true)
         .fullScreenCover(isPresented: $shouldShowHomeScreenView) { // Transition to the HomeScreenView
-            HomeScreenView(habitText: $habitText, habitColor: selectedHabitColor) // Pass habit text and color to the HomeScreenView
+            HomeScreenView(habitText: $habitText, habits: $habitViewModel.habits, habitColor: selectedHabitColor) // Pass habit text and color to the HomeScreenView
         }
 }
         
