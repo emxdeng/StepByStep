@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		C20C35472A16666100D24C38 /* AfterSettingGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */; };
 		C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8932A08C63000621FD3 /* AppLogoView.swift */; };
 		C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8952A08C64000621FD3 /* GetStartedView.swift */; };
@@ -17,6 +18,9 @@
 		C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8602D642A19A513006583E7 /* HabitButtonStyle.swift */; };
 		C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */; };
 		C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E72A18E41B004E8463 /* ParseUserData.swift */; };
+=======
+		08EDA7F62A0A65BD0083299A /* Skia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08EDA7F52A0A65BD0083299A /* Skia.ttf */; };
+>>>>>>> origin/wip-id2-add-goal-screens-3
 		C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B792A07AA940041C402 /* StepByStepApp.swift */; };
 		C8DE0B7E2A07AA970041C402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0B7D2A07AA970041C402 /* Assets.xcassets */; };
 		C8DE0B812A07AA970041C402 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DE0B802A07AA970041C402 /* Preview Assets.xcassets */; };
@@ -47,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		C20C35462A16666100D24C38 /* AfterSettingGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSettingGoalView.swift; sourceTree = "<group>"; };
 		C21DC8932A08C63000621FD3 /* AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
 		C21DC8952A08C64000621FD3 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
@@ -56,6 +61,10 @@
 		C8602D642A19A513006583E7 /* HabitButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitButtonStyle.swift; sourceTree = "<group>"; };
 		C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		C89D00E72A18E41B004E8463 /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
+=======
+		08EDA7F42A0A65310083299A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		08EDA7F52A0A65BD0083299A /* Skia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skia.ttf; sourceTree = SOURCE_ROOT; };
+>>>>>>> origin/wip-id2-add-goal-screens-3
 		C8DE0B762A07AA940041C402 /* StepByStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepByStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DE0B792A07AA940041C402 /* StepByStepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepApp.swift; sourceTree = "<group>"; };
 		C8DE0B7D2A07AA970041C402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +138,7 @@
 		C8DE0B782A07AA940041C402 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
+				08EDA7F42A0A65310083299A /* Info.plist */,
 				C8DE0BA42A07BCAE0041C402 /* Navigation */,
 				C8DE0BA32A07BC9A0041C402 /* Models */,
 				C21DC89B2A08CD7B00621FD3 /* Info.plist */,
@@ -160,6 +170,7 @@
 			children = (
 				C8DE0B942A07AA970041C402 /* StepByStepUITests.swift */,
 				C8DE0B962A07AA970041C402 /* StepByStepUITestsLaunchTests.swift */,
+				08EDA7F52A0A65BD0083299A /* Skia.ttf */,
 			);
 			path = StepByStepUITests;
 			sourceTree = "<group>";
@@ -302,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EDA7F62A0A65BD0083299A /* Skia.ttf in Resources */,
 				C8DE0B812A07AA970041C402 /* Preview Assets.xcassets in Resources */,
 				C8DE0BAC2A0A0C420041C402 /* user_habits.json in Resources */,
 				C8DE0BAA2A0A02740041C402 /* goal_data.json in Resources */,
@@ -502,7 +514,11 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+<<<<<<< HEAD
 				INFOPLIST_FILE = "";
+=======
+				INFOPLIST_FILE = StepByStep/Info.plist;
+>>>>>>> origin/wip-id2-add-goal-screens-3
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -533,7 +549,11 @@
 				DEVELOPMENT_TEAM = K62QAZHQ7Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+<<<<<<< HEAD
 				"INFOPLIST_FILE[sdk=*]" = "";
+=======
+				INFOPLIST_FILE = StepByStep/Info.plist;
+>>>>>>> origin/wip-id2-add-goal-screens-3
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
