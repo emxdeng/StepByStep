@@ -60,7 +60,7 @@ struct AfterSettingGoalView: View {
                     // Create a horizontal ScrollView to display the calendar
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            ForEach(-365...365, id: \.self) { index in
+                            ForEach(-180...180, id: \.self) { index in
                                 VStack {
                                     Text(String(Date().addingTimeInterval(TimeInterval(86400 * index)).dayOfMonth()))
                                         .font(.system(size: 20))
@@ -104,8 +104,6 @@ struct AfterSettingGoalView: View {
                 
                     // Display the button to add goals
                     Button(action: {
-                        // Handle button tap action
-                        print("Button tapped!")
                         // Transition to AddGoalView
                         showAddHabitsView = true
                     }) {
