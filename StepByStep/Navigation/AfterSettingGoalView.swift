@@ -119,7 +119,7 @@ struct AfterSettingGoalView: View {
         }
         .navigationBarHidden(true)
         .fullScreenCover(isPresented: $showAddHabitsView) { // Transition to AddGoalView
-            AddHabitsView()
+            AddGoalView()
         }
     }
 }
