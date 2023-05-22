@@ -14,9 +14,7 @@ struct AddHabitsView: View {
 
     //Properties
     var body: some View {
-
-        HabitsView(selectedGoal: selectedGoal)
-        
+        HabitsView(selectedGoal: $selectedGoal)
     }
 }
 
@@ -29,7 +27,8 @@ struct AddHabitsView_Previews: PreviewProvider {
 
 struct HabitsView: View {
 
-    let selectedGoal: String
+    @Binding var selectedGoal: String
+    
     @State private var selectedHabit: String = ""
     
     @State private var showContentView = false // Track whether to show the ContentView
@@ -112,7 +111,7 @@ struct HabitsView: View {
         }
         .navigationBarHidden(true)
         .fullScreenCover(isPresented: $showContentView) { // Transition to ContentView
-            ContentView()
+            ContentView(selectedGoal: $selectedGoal)
         }
     }
 }

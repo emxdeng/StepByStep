@@ -49,10 +49,11 @@ struct ContentView: View {
     @State private var selectedHours = 0
     @State private var selectedMinutes = 0
     @State private var hideTimePickers = false
+    
+    @Binding var selectedGoal: String
 
     var body: some View {
         ScrollView {
-        
         // Code for title of this screen
         Text("Now let's set the specifics of\nyour goal and habit :)")
                 .font(.system(size: 24))
@@ -69,9 +70,13 @@ struct ContentView: View {
                 .foregroundColor(CustomColor.textColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .alignmentGuide(.leading) { _ in 0 }
-            DisclosureGroup(/*@START_MENU_TOKEN@*/"Group"/*@END_MENU_TOKEN@*/) {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
-            }
+            
+            TextField("My goal", text: $selectedGoal)
+                .font(.system(size: 18))
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.orange)
+                .cornerRadius(10)
         }
         
         // Code for setting the due date of the goal
@@ -484,7 +489,7 @@ struct ContentView: View {
         
         struct ContentView_Previews: PreviewProvider {
             static var previews: some View {
-                ContentView()
+                ContentView(selectedGoal: .constant("Be a morning person"))
             }
         }
     }
