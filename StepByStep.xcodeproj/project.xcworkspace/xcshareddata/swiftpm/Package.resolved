@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "loadingbutton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Changemin/LoadingButton",
+      "state" : {
+        "revision" : "5045668df822a04c248a9b40aca888a4d37f275a",
+        "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "omentextfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kitlangton/OmenTextField",
+      "state" : {
+        "revision" : "da87c6568700aa633639e85e159e6fbba73ce28a",
+        "version" : "0.0.6"
+      }
+    }
+  ],
+  "version" : 2
+}
