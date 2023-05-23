@@ -7,37 +7,6 @@
 
 import SwiftUI
 
-struct CustomColor {
-    static let textColor = Color("TextColor")
-    static let gray = Color("Gray")
-    static let lightOrange = Color("LightOrange")
-    static let habitColor1 = Color("FAC088")
-    static let habitColor2 = Color("F29094")
-    static let habitColor3 = Color("A6CFF0")
-    static let habitColor4 = Color("F08461")
-    static let habitColor5 = Color("91C483")
-    static let habitColor6 = Color("F08675")
-    static let habitColor7 = Color("ECC268")
-    static let habitColor8 = Color("A7C86E")
-    static let habitColor9 = Color("7DA3D6")
-    static let habitColor10 = Color("9784BD")
-    static let habitColor11 = Color("EC648A")
-    static let habitColor12 = Color("F28D39")
-    static let habitColor13 = Color("77C7CC")
-    static let habitColor14 = Color("BABEC9")
-    static let habitColor15 = Color("B9CF4D")
-    static let habitColor16 = Color("B83325")
-    static let habitColor17 = Color("EDC33E")
-    static let habitColor18 = Color("52905B")
-    static let habitColor19 = Color("247CB9")
-    static let habitColor20 = Color("775C45")
-    static let habitColor21 = Color("D6746B")
-    static let habitColor22 = Color("EC928B")
-    static let habitColor23 = Color("E6A7B4")
-    static let habitColor24 = Color("F1B2A4")
-    static let habitColor25 = Color("EC987E")
-}
-
 struct ContentView: View {
     @State private var hasDueDate = true
     @State private var selectedDate = Date()
@@ -49,11 +18,25 @@ struct ContentView: View {
     @State private var selectedHours = 0
     @State private var selectedMinutes = 0
     @State private var hideTimePickers = false
+    @State private var shouldShowHomeScreenView = false // transit to HomeScreenView
+    
     @StateObject var habitViewModel = HabitViewModel()
     
     @Binding var selectedGoal: String
     
-    @State private var shouldShowHomeScreenView = false // transit to HomeScreenView
+    // Colors for habit color palette
+    let habitColors: [Color] = [
+        CustomColor.habitColor1, CustomColor.habitColor2, CustomColor.habitColor3,
+        CustomColor.habitColor4, CustomColor.habitColor5, CustomColor.habitColor6,
+        CustomColor.habitColor7, CustomColor.habitColor8, CustomColor.habitColor9,
+        CustomColor.habitColor10, CustomColor.habitColor11, CustomColor.habitColor12,
+        CustomColor.habitColor13, CustomColor.habitColor14, CustomColor.habitColor15,
+        CustomColor.habitColor16, CustomColor.habitColor17, CustomColor.habitColor18,
+        CustomColor.habitColor19, CustomColor.habitColor20, CustomColor.habitColor21,
+        CustomColor.habitColor22, CustomColor.habitColor23, CustomColor.habitColor24,
+        CustomColor.habitColor25
+    ]
+    
 
     var body: some View {
         ScrollView {
@@ -124,7 +107,7 @@ struct ContentView: View {
                     .background(selectedHabitColor)
                     .foregroundColor(selectedHabitColor != nil ? .white : CustomColor.textColor)
             }
-            
+    
             // Code for habit color palette
             Section(header: Text("Habit colour")
                 .font(.system(size: 22))
@@ -132,238 +115,21 @@ struct ContentView: View {
                 .foregroundColor(CustomColor.textColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
             ) {
-                HStack {
-                    Button("") {
+                VStack {
+                        ForEach(0..<5) { row in
+                            HStack {
+                                ForEach(0..<5) { column in
+                                    let index = row * 5 + column
+                                    HabitColorButton(color: habitColors[index]) {
+                                        selectedHabitColor = habitColors[index]
+                                    }
+                                }
+                            }
+                        }
                     }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor1)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor1
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor2)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor2
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor3)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor3
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor4)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor4
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor5)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor5
-                    }
-                }
-                
-                HStack {
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor6)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor6
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor7)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor7
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor8)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor8
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor9)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor9
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor10)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor10
-                    }
-                }
-                HStack {
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor11)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor11
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor12)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor12
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor13)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor13
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor14)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor14
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor15)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor15
-                    }
-                }
-                HStack {
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor16)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor16
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor17)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor17
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor18)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor18
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor19)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor19
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor20)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor20
-                    }
-                }
-                HStack {
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor21)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor21
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor22)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor22
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor23)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor23
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor24)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor24
-                    }
-                    
-                    Button("") {
-                    }
-                    .frame(width: 50, height: 50)
-                    .background(CustomColor.habitColor25)
-                    .clipShape(Circle())
-                    .onTapGesture {
-                        selectedHabitColor = CustomColor.habitColor25
-                    }
-                }
             }
+            
+
         }
         
         // Code for weekly calendar
