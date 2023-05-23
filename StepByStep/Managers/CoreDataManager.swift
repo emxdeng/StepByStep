@@ -26,9 +26,9 @@ class CoreDataManager {
         habitTitle: String,
         goal: String,
         color: String,
-        creationDate: String,
-        timeOfDay: String = "",
-        dueDate: String = "",
+        creationDate: Date,
+        timeOfDay: Date? = nil,
+        dueDate: Date? = nil,
         daysOfWeek: String,
         howLongInMinutes: Int32 = 0,
         howManyTimesPerDay: Int32 = 1

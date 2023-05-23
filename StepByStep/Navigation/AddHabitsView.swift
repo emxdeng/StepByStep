@@ -111,7 +111,7 @@ struct HabitsView: View {
         }
         .navigationBarHidden(true)
         .fullScreenCover(isPresented: $showContentView) { // Transition to ContentView
-            ContentView(selectedGoal: $selectedGoal)
+            ContentView(coreDM: CoreDataManager(), selectedGoal: $selectedGoal)
         }
     }
 }

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+
+
 struct CustomColor {
     static let textColor = Color("TextColor")
     static let gray = Color("Gray")
@@ -39,6 +42,9 @@ struct CustomColor {
 }
 
 struct ContentView: View {
+    
+    let coreDM: CoreDataManager
+    
     @State private var hasDueDate = true
     @State private var selectedDate = Date()
     @State private var habitText = "" // pass habit text to the HomeScreenView
@@ -450,6 +456,11 @@ struct ContentView: View {
                 shouldShowHomeScreenView = true
                 habitViewModel.saveHabit(habitText) // Save the habit text to the ViewModel
                 print(habitViewModel.habits) // Print the habits array
+                
+                //CoreDM Save
+                coreDM.saveHabit(habitTitle: habitText, goal: selectedGoal, color: selectedHabitColor?.hexString() ?? "7DA3D6", creationDate: Date(), timeOfDay: selectedAlarmTime, dueDate: selectedDate, daysOfWeek: selectedDays.joined(separator: ";"), howLongInMinutes: convertToMinutes(hours: selectedHours, minutes: selectedMinutes))
+                
+                
             }) {
                 Text("Save")
                     .font(.system(size: 18, weight: .bold))
@@ -500,7 +511,7 @@ struct ContentView: View {
         
         struct ContentView_Previews: PreviewProvider {
             static var previews: some View {
-                ContentView(selectedGoal: .constant("Be a morning person"))
+                ContentView(coreDM: CoreDataManager(), selectedGoal: .constant("Be a morning person"))
             }
         }
     }

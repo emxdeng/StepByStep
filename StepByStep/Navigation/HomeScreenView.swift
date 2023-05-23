@@ -57,7 +57,7 @@ struct HomeScreenView: View {
         }
         .edgesIgnoringSafeArea(.all) // Extend content to the edges of the screen
         .fullScreenCover(isPresented: $shouldShowContentView) {
-            ContentView(selectedGoal: .constant("Be a morning person"))
+            ContentView(coreDM: CoreDataManager(), selectedGoal: .constant("Be a morning person"))
         }
     }
 }
