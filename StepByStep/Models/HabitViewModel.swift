@@ -27,6 +27,7 @@ class HabitViewModel: ObservableObject {
         }
     }
 
+    // Save habit
     func saveHabit(_ habitText: String, _ selectedHours: Int, _ selectedMinutes: Int) {
         let context = persistenceController.container.viewContext
         let habit = Habit(context: context)
@@ -36,6 +37,21 @@ class HabitViewModel: ObservableObject {
 
         habits.append(habit)
         persistenceController.save()
+    }
+    
+    // Delete all habits
+    func deleteAllHabits() {
+        let context = persistenceController.container.viewContext
+        
+        do {
+            let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Habit.fetchRequest()
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+            try context.execute(deleteRequest)
+            try context.save()
+            habits.removeAll()
+        } catch {
+            print("Error deleting habits: \(error)")
+        }
     }
     
 }
