@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ShowHabitListView: View {
     @State private var shouldShowContentView = false // Transit to ContentView
+    @State private var showDeleteConfirmationAlert = false // Show the pop-up window
+    
     @EnvironmentObject var habitViewModel: HabitViewModel
     
     static let lightOrange = Color("LightOrange")
@@ -37,24 +39,43 @@ struct ShowHabitListView: View {
                     }
                     .padding()
                     .navigationBarTitle("Habit List")
-                    
-                    
-                    // Display the button to add goals
-                    Button(action: {
-                        // Transition to shouldShowContentView
-                        shouldShowContentView = true
-                    }) {
-                        Image("addGoalButton")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 180, height: 180)
-                    }
+
                 }
             }
-            .edgesIgnoringSafeArea(.all) // Extend content to the edges of the screen
             .fullScreenCover(isPresented: $shouldShowContentView) {
                 ContentView(selectedGoal: .constant("Be a morning person"))
             }
         }
+        // Display the button to add goals
+        Button(action: {
+            // Transition to shouldShowContentView
+            shouldShowContentView = true
+        }) {
+            Image("addGoalButton")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 180, height: 180)
+        }
+        
+        // Add settings button to delete all habits
+        Button(action: {
+            showDeleteConfirmationAlert = true
+            //habitViewModel.deleteAllHabits()
+        }, label: {
+            Image("settings")
+                .renderingMode(.original)
+                .frame(width: 30, height: 30)
+        })
+        .alert(isPresented: $showDeleteConfirmationAlert) {
+            Alert(
+                title: Text("Warning"),
+                message: Text("Are you sure you want to delete all habits?"),
+                primaryButton: .destructive(Text("Yes")) {
+                    habitViewModel.deleteAllHabits()
+                },
+                secondaryButton: .cancel()
+            )
+        }
+
     }
 }
