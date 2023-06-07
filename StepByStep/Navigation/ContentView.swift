@@ -19,11 +19,13 @@ struct ContentView: View {
     @State private var selectedMinutes = 0
     @State private var hideTimePickers = false
     @State private var shouldShowHomeScreenView = false // transit to HomeScreenView
-    
+
     @StateObject var habitViewModel = HabitViewModel()
-    
+
     @Binding var selectedGoal: String
-    
+
+    @Environment(\.presentationMode) var presentationMode
+
     // Colors for habit color palette
     let habitColors: [Color] = [
         CustomColor.habitColor1, CustomColor.habitColor2, CustomColor.habitColor3,
@@ -36,108 +38,122 @@ struct ContentView: View {
         CustomColor.habitColor22, CustomColor.habitColor23, CustomColor.habitColor24,
         CustomColor.habitColor25
     ]
-    
+
 
     var body: some View {
-        ScrollView {
-        // Title of this screen
-        ContentTitleView()
-        
-        // Code for choosing the goal the habit is part of
-        VStack {
-            Text("My goal")
-                .font(.system(size: 22))
-                .fontWeight(.regular)
-                .foregroundColor(CustomColor.textColor)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .alignmentGuide(.leading) { _ in 0 }
-            
-            TextField("My goal", text: $selectedGoal)
-                .font(.system(size: 18))
-                .foregroundColor(.white)
-                .padding()
-                .background(Color.orange)
-                .cornerRadius(10)
-        }
-        
-        // Set the due date of the goal
-        HabitDueDateView(hasDueDate: $hasDueDate, selectedDate: $selectedDate)
-            
-        // Code for 'helpful habit' that the user will input
-        VStack {
-            Section(header: Text("Helpful habit")
-                .font(.system(size: 22))
-                .fontWeight(.regular)
-                .foregroundColor(CustomColor.textColor)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            ) {
-                TextField("Write your habit here...", text: $habitText)
-                    .background(selectedHabitColor)
-                    .foregroundColor(selectedHabitColor != nil ? .white : CustomColor.textColor)
-            }
-    
-            // Code for habit color palette
-            Section(header: Text("Habit colour")
-                .font(.system(size: 22))
-                .fontWeight(.regular)
-                .foregroundColor(CustomColor.textColor)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            ) {
+        NavigationView {
+            ScrollView {
+                // Title of this screen
+                //        ContentTitleView()
+
+                // Code for choosing the goal the habit is part of
                 VStack {
-                        ForEach(0..<5) { row in
-                            HStack {
-                                ForEach(0..<5) { column in
-                                    let index = row * 5 + column
-                                    HabitColorButton(color: habitColors[index]) {
-                                        selectedHabitColor = habitColors[index]
+                    Text("My goal")
+                        .font(.system(size: 22))
+                        .fontWeight(.regular)
+                        .foregroundColor(CustomColor.textColor)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .alignmentGuide(.leading) { _ in 0 }
+
+                    TextField("My goal", text: $selectedGoal)
+                        .font(.system(size: 18))
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.orange)
+                        .cornerRadius(10)
+                }
+
+                // Set the due date of the goal
+                //        HabitDueDateView(hasDueDate: $hasDueDate, selectedDate: $selectedDate)
+
+                // Code for 'helpful habit' that the user will input
+                VStack {
+                    Section(header: Text("Helpful habit")
+                        .font(.system(size: 22))
+                        .fontWeight(.regular)
+                        .foregroundColor(CustomColor.textColor)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    ) {
+                        TextField("Write your habit here...", text: $habitText)
+                            .background(selectedHabitColor)
+                            .foregroundColor(selectedHabitColor != nil ? .white : CustomColor.textColor)
+                    }
+
+                    // Code for habit color palette
+                    Section(header: Text("Habit colour")
+                        .font(.system(size: 22))
+                        .fontWeight(.regular)
+                        .foregroundColor(CustomColor.textColor)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    ) {
+                        VStack {
+                            ForEach(0..<5) { row in
+                                HStack {
+                                    ForEach(0..<5) { column in
+                                        let index = row * 5 + column
+                                        HabitColorButton(color: habitColors[index]) {
+                                            selectedHabitColor = habitColors[index]
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-            }
-            
 
+
+                }
+
+                // Set weekly calendar for habit
+                //        HabitWeeklyCalendarView(selectedDays: $selectedDays, selectedHabitColor: $selectedHabitColor)
+
+                // Set time for habit
+                //        HabitTimeView(hasAlarmTime: $hasAlarmTime, selectedAlarmTime: $selectedAlarmTime)
+
+                // Set amount of time or number of times per day
+                //        HabitDurationView(hideTimePickers: $hideTimePickers, selectedHours: $selectedHours, selectedMinutes: $selectedMinutes)
+
+                // Code for 'save' button
+                Button(action: {
+                    // Action to perform when the button is tapped
+                    shouldShowHomeScreenView = true
+                    habitViewModel.saveHabit(habitText) // Save the habit text to the ViewModel
+                    print(habitViewModel.habits) // Print the habits array
+                }) {
+                    Text("Save")
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.white)
+                }
+                    .frame(width: 120, height: 40)
+                    .background(CustomColor.habitColor5)
+                    .clipShape(Rectangle())
+                    .cornerRadius(4)
+            }
+                .navigationBarItems(leading: NavigationLink(destination: AddHabitsView(selectedGoal: $selectedGoal), label: {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .imageScale(.large)
+                        .padding(2)
+                    Text("Back")
+                }
+            })
+            )
+                .navigationBarBackButtonHidden(true)
+                .environmentObject(habitViewModel) // Pass the ViewModel to the environment
+            //    .navigationBarHidden(true)
+            .fullScreenCover(isPresented: $shouldShowHomeScreenView) { // Transition to the HomeScreenView
+                //        ShowHabitListView()
+                //            HomeScreenView(habitText: $habitText, habits: $habitViewModel.habits, habitColor: selectedHabitColor) // Pass habit text and color to the HomeScreenView
+            }
         }
-        
-        // Set weekly calendar for habit
-        HabitWeeklyCalendarView(selectedDays: $selectedDays, selectedHabitColor: $selectedHabitColor)
-            
-        // Set time for habit
-        HabitTimeView(hasAlarmTime: $hasAlarmTime, selectedAlarmTime: $selectedAlarmTime)
-        
-        // Set amount of time or number of times per day
-        HabitDurationView(hideTimePickers: $hideTimePickers, selectedHours: $selectedHours, selectedMinutes: $selectedMinutes)
-        
-        // Code for 'save' button
-        Button(action: {
-            // Action to perform when the button is tapped
-            shouldShowHomeScreenView = true
-            habitViewModel.saveHabit(habitText) // Save the habit text to the ViewModel
-            print(habitViewModel.habits) // Print the habits array
-        }) {
-            Text("Save")
-                .font(.system(size: 18, weight: .bold))
-                .foregroundColor(.white)
-        }
-        .frame(width: 120, height: 40)
-        .background(CustomColor.habitColor5)
-        .clipShape(Rectangle())
-        .cornerRadius(4)
     }
-    .environmentObject(habitViewModel) // Pass the ViewModel to the environment
-    .navigationBarHidden(true)
-    .fullScreenCover(isPresented: $shouldShowHomeScreenView) { // Transition to the HomeScreenView
-        ShowHabitListView()
-//            HomeScreenView(habitText: $habitText, habits: $habitViewModel.habits, habitColor: selectedHabitColor) // Pass habit text and color to the HomeScreenView
+
+
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView(selectedGoal: .constant("Be a morning person"))
+        }
     }
 }
-        
-        
-        struct ContentView_Previews: PreviewProvider {
-            static var previews: some View {
-                ContentView(selectedGoal: .constant("Be a morning person"))
-            }
-        }
-    }
 

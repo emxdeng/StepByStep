@@ -9,22 +9,23 @@ import SwiftUI
 import Foundation
 
 struct AddGoalView: View {
-    
+
     @State private var shouldShowAfterSettingGoalView = false
     @State private var selectedGoal = ""
-    
+    @Environment(\.presentationMode) var presentationMode
+
     // Properties
     var body: some View {
         NavigationView {
             VStack {
                 Spacer().frame(height: 65)
-                
+
                 Text("Do you have something big you want to achieve?")
                     .font(.custom("Skia", size: 20))
                     .offset(x: -10)
-                
+
                 Spacer().frame(height: 30)
-                
+
                 // Staying Fit
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
@@ -47,7 +48,7 @@ struct AddGoalView: View {
                     shouldShowAfterSettingGoalView = true
                     selectedGoal = "Be a morning person"
                 }, label: {
-                    HStack{
+                    HStack {
                         Spacer()
                         Image("sun@4x")
                             .resizable()
@@ -59,7 +60,7 @@ struct AddGoalView: View {
                         Spacer()
                     }
                 }).buttonStyle(RoundedButtonStyle())
-                
+
                 // Learn something new
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
@@ -77,7 +78,7 @@ struct AddGoalView: View {
                         Spacer()
                     }
                 }).buttonStyle(RoundedButtonStyle())
-                
+
                 // Control my budget
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
@@ -95,7 +96,7 @@ struct AddGoalView: View {
                         Spacer()
                     }
                 }).buttonStyle(RoundedButtonStyle())
-                
+
                 // Stay mentally healthy
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
@@ -113,7 +114,7 @@ struct AddGoalView: View {
                         Spacer()
                     }
                 }).buttonStyle(RoundedButtonStyle())
-                
+
                 // Be more productive
                 Button(action: {
                     shouldShowAfterSettingGoalView = true
@@ -131,13 +132,23 @@ struct AddGoalView: View {
                         Spacer()
                     }
                 }).buttonStyle(RoundedButtonStyle())
-                
+
                 Spacer().frame(height: 65)
             }
-            .padding()
-            .navigationTitle("Add New Goal")
-            .navigationBarHidden(true)
-            .fullScreenCover(isPresented: $shouldShowAfterSettingGoalView) {
+                .padding()
+                .navigationBarItems(leading: NavigationLink(destination: AddGoalView(), label: {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "chevron.left")
+                        .imageScale(.large)
+                        .padding(2)
+                    Text("Back")
+                }
+            })
+            )
+                .navigationBarBackButtonHidden(true)
+                .fullScreenCover(isPresented: $shouldShowAfterSettingGoalView) {
                 AddHabitsView(selectedGoal: $selectedGoal)
             }
         }
