@@ -5,34 +5,36 @@
 //  Created by Janet on 22/5/2023.
 //
 
-import Foundation
 import SwiftUI
+import CoreData
 
 class HabitViewModel: ObservableObject {
-    @Published var habits: [String] = [] {
-        didSet {
-            saveHabits() // Save habits whenever the array is updated
-        }
-    }
+    @Published var habits: [Habit] = []
+    
+    private let persistenceController = PersistenceController.shared
 
     init() {
-        loadHabits() // Load habits when initializing the ViewModel
+        fetchHabits()
     }
+    
+    func fetchHabits() {
+        let request: NSFetchRequest<Habit> = Habit.fetchRequest()
 
-    private func saveHabits() {
-        UserDefaults.standard.set(habits, forKey: "HabitsKey") // Save habits to UserDefaults
-    }
-
-    private func loadHabits() {
-        if let savedHabits = UserDefaults.standard.array(forKey: "HabitsKey") as? [String] {
-            habits = savedHabits // Load habits from UserDefaults
+        do {
+            habits = try persistenceController.container.viewContext.fetch(request)
+        } catch {
+            print("Error fetching habits: \(error)")
         }
     }
 
     func saveHabit(_ habitText: String) {
-        habits.append(habitText)
-        print(habits)
-    }
-}
+        let context = persistenceController.container.viewContext
+        let habit = Habit(context: context)
+        habit.text = habitText
 
+        habits.append(habit)
+        persistenceController.save()
+    }
+    
+}
 

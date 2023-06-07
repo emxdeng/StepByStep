@@ -18,7 +18,7 @@ struct ContentView: View {
     @State private var selectedHours = 0
     @State private var selectedMinutes = 0
     @State private var hideTimePickers = false
-    @State private var shouldShowHomeScreenView = false // transit to HomeScreenView
+    @State private var shouldShowHabitListView = false // transit to ShouldHabitListView
     
     @StateObject var habitViewModel = HabitViewModel()
     
@@ -111,10 +111,11 @@ struct ContentView: View {
         
         // Code for 'save' button
         Button(action: {
-            // Action to perform when the button is tapped
-            shouldShowHomeScreenView = true
-            habitViewModel.saveHabit(habitText) // Save the habit text to the ViewModel
-            print(habitViewModel.habits) // Print the habits array
+            shouldShowHabitListView = true
+            habitViewModel.saveHabit(habitText)
+            print("Text below are habit lists!!!!!!!")
+            print(habitViewModel.habits)
+            print("end line of habit lists&&&&")
         }) {
             Text("Save")
                 .font(.system(size: 18, weight: .bold))
@@ -127,17 +128,20 @@ struct ContentView: View {
     }
     .environmentObject(habitViewModel) // Pass the ViewModel to the environment
     .navigationBarHidden(true)
-    .fullScreenCover(isPresented: $shouldShowHomeScreenView) { // Transition to the HomeScreenView
+    .fullScreenCover(isPresented: $shouldShowHabitListView) { // Transition to the HomeScreenView
         ShowHabitListView()
+            .environmentObject(habitViewModel)
 //            HomeScreenView(habitText: $habitText, habits: $habitViewModel.habits, habitColor: selectedHabitColor) // Pass habit text and color to the HomeScreenView
     }
 }
         
         
-        struct ContentView_Previews: PreviewProvider {
-            static var previews: some View {
-                ContentView(selectedGoal: .constant("Be a morning person"))
-            }
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView(selectedGoal: .constant("Be a morning person"))
+                .environmentObject(HabitViewModel())
         }
     }
+
+}
 
