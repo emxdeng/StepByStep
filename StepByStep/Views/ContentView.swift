@@ -112,7 +112,7 @@ struct ContentView: View {
         // Code for 'save' button
         Button(action: {
             shouldShowHabitListView = true
-            habitViewModel.saveHabit(habitText)
+            habitViewModel.saveHabit(habitText, selectedHours, selectedMinutes)
             print("Text below are habit lists!!!!!!!")
             print(habitViewModel.habits)
             print("end line of habit lists&&&&")
