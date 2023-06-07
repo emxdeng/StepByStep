@@ -46,7 +46,7 @@ struct HabitDurationView: View {
             }
 
             Toggle(isOn: $hideTimePickers) {
-                Text("(Don't set this)")
+                Text("Set duration later")
             }
             .padding(.top)
         }
