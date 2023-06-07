@@ -27,10 +27,12 @@ class HabitViewModel: ObservableObject {
         }
     }
 
-    func saveHabit(_ habitText: String) {
+    func saveHabit(_ habitText: String, _ selectedHours: Int, _ selectedMinutes: Int) {
         let context = persistenceController.container.viewContext
         let habit = Habit(context: context)
         habit.text = habitText
+        habit.selectedHours = Int16(selectedHours)
+        habit.selectedMinutes = Int16(selectedMinutes)
 
         habits.append(habit)
         persistenceController.save()
@@ -38,3 +40,15 @@ class HabitViewModel: ObservableObject {
     
 }
 
+
+// create a computed property that returns a formatted string combining the habit text and duration
+extension Habit {
+    // Computed property to combine habit text and duration
+    var displayText: String {
+        if let text = text {
+            let duration = String(format: "%02d:%02d", selectedHours, selectedMinutes)
+            return "\(text) - \(duration)"
+        }
+        return ""
+    }
+}

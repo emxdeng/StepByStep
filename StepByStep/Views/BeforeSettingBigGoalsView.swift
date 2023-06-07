@@ -105,8 +105,6 @@ struct BeforeSettingBigGoalsView: View {
                 
                     // Display the button to add goals
                     Button(action: {
-                        // Handle button tap action
-                        print("Button tapped!")
                         // Transition to AddGoalView
                         showAddGoalView = true
                     }) {
