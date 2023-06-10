@@ -76,7 +76,7 @@ struct ShowHabitListView: View {
                 }
             }
             .fullScreenCover(isPresented: $shouldShowContentView) {
-                ContentView(selectedGoal: .constant("Be a morning person"))
+                ContentView(selectedGoal: .constant("Be a morning person"), selectedHabit: .constant("Test habit"), habitTextField: .constant("Test free text"))
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

@@ -14,8 +14,13 @@ struct AddHabitsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var selectedHabit: String = ""
     @State private var showContentView = false // Track whether to show the ContentView
+    @State private var textFieldText: String = ""
 
-    @State private var showBackButton = true
+    //Disable continue button if no habits are selected or entered
+    var isContinueButtonEnabled: Bool {
+        return !selectedHabit.isEmpty || !textFieldText.isEmpty
+    }
+
 
     //Properties
     var body: some View {
@@ -39,6 +44,7 @@ struct AddHabitsView: View {
                         ForEach(habits, id: \.self) { habit in
                             Button(action: {
                                 selectedHabit = habit
+                                textFieldText = ""
                             }) {
                                 Text(habit)
                             }
@@ -51,7 +57,13 @@ struct AddHabitsView: View {
                     VStack {
                         Text("+")
                         Text("Or add your little step manually :)")
-                        OmenTextField("Write your response here", text: .constant(""))
+                        OmenTextField("Write your response here", text: $textFieldText)
+                        
+                        // Added onChange modifier
+                        .onChange(of: textFieldText) { newValue in
+                            textFieldText = newValue
+                        }
+
                             .padding(10)
                             .disabled(!selectedHabit.isEmpty)
                             .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.05)
@@ -71,6 +83,10 @@ struct AddHabitsView: View {
                     // Transit to Contentview
                     Button(action: {
                         showContentView = true
+                        
+                        if (!isContinueButtonEnabled) {
+                            //
+                        }
                     }, label: {
                         VStack {
                             Image(systemName: "arrow.right.circle")
@@ -78,25 +94,27 @@ struct AddHabitsView: View {
                                 .frame(width: 50, height: 50)
                             Text("Continue")
                         }
-                    })
+                    }).disabled(!isContinueButtonEnabled)
 
                     Spacer().frame(height: 100)
                 }
                     .padding()
             }
                 .navigationBarBackButtonHidden(true)
+            
+                //Custom Back Button
                 .navigationBarItems(leading: Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .padding(2)
-                        Text("Back")
-                    }
-                })
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                    Image(systemName: "chevron.left")
+                        .imageScale(.large)
+                        .padding(2)
+                    Text("Back")
+                }
+            })
                 .fullScreenCover(isPresented: $showContentView) { // Transition to ContentView
-                ContentView(selectedGoal: $selectedGoal)
+                    ContentView(selectedGoal: $selectedGoal, selectedHabit: $selectedHabit, habitTextField: $textFieldText)
             }
         }
     }
