@@ -30,7 +30,13 @@ struct HabitButtonStyle: ButtonStyle {
                 .scaleEffect(pressed ? 0.95 : 1.0)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                 .onTapGesture {
-                    selected = identifier
+                    if selected == identifier {
+                        // Deselect the button if it's already selected
+                        selected = ""
+                    } else {
+                        // Select the button
+                        selected = identifier
+                    }
                 }
         }
     }
