@@ -10,9 +10,16 @@
 		C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8932A08C63000621FD3 /* AppLogoView.swift */; };
 		C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21DC8952A08C64000621FD3 /* GetStartedView.swift */; };
 		C21DC89A2A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */; };
+		C2642AC62A2F682800951DA5 /* ShowHabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2642AC52A2F682800951DA5 /* ShowHabitListView.swift */; };
+		C2642AC82A2F6E1600951DA5 /* HabitTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2642AC72A2F6E1600951DA5 /* HabitTimeView.swift */; };
+		C2642ACA2A2F6F7F00951DA5 /* HabitWeeklyCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2642AC92A2F6F7F00951DA5 /* HabitWeeklyCalendarView.swift */; };
+		C2642ACC2A2F707700951DA5 /* HabitDurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2642ACB2A2F707700951DA5 /* HabitDurationView.swift */; };
+		C2642ACE2A2F714800951DA5 /* HabitDueDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2642ACD2A2F714800951DA5 /* HabitDueDateView.swift */; };
+		C2642AD02A2F71D300951DA5 /* ContentTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2642ACF2A2F71D300951DA5 /* ContentTitleView.swift */; };
+		C2642AD22A2FFF7800951DA5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2642AD12A2FFF7800951DA5 /* Persistence.swift */; };
+		C2642AD52A2FFFD500951DA5 /* HabitDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2642AD32A2FFFD500951DA5 /* HabitDataModel.xcdatamodeld */; };
 		C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */; };
 		C27F527D2A1B2EBA0032863B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F527C2A1B2EB90032863B /* ContentView.swift */; };
-		C27F527F2A1B4A060032863B /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F527E2A1B4A060032863B /* HomeScreenView.swift */; };
 		C27F52812A1B66290032863B /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F52802A1B66290032863B /* HabitViewModel.swift */; };
 		C2BF08FC2A1C4E1D0079DD40 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF08FB2A1C4E1D0079DD40 /* CustomColor.swift */; };
 		C2BF08FE2A1C5AF70079DD40 /* HabitColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BF08FD2A1C5AF70079DD40 /* HabitColorButton.swift */; };
@@ -55,11 +62,18 @@
 		C21DC8932A08C63000621FD3 /* AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
 		C21DC8952A08C64000621FD3 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		C21DC8992A08C96400621FD3 /* TropicalAsianDEMO-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TropicalAsianDEMO-Regular.ttf"; sourceTree = "<group>"; };
+		C2642AC32A2F607500951DA5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2642AC52A2F682800951DA5 /* ShowHabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHabitListView.swift; sourceTree = "<group>"; };
+		C2642AC72A2F6E1600951DA5 /* HabitTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTimeView.swift; sourceTree = "<group>"; };
+		C2642AC92A2F6F7F00951DA5 /* HabitWeeklyCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitWeeklyCalendarView.swift; sourceTree = "<group>"; };
+		C2642ACB2A2F707700951DA5 /* HabitDurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDurationView.swift; sourceTree = "<group>"; };
+		C2642ACD2A2F714800951DA5 /* HabitDueDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDueDateView.swift; sourceTree = "<group>"; };
+		C2642ACF2A2F71D300951DA5 /* ContentTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTitleView.swift; sourceTree = "<group>"; };
+		C2642AD12A2FFF7800951DA5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C2642AD42A2FFFD500951DA5 /* HabitDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitDataModel.xcdatamodel; sourceTree = "<group>"; };
 		C273F95C2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeSettingBigGoalsView.swift; sourceTree = "<group>"; };
 		C27F527C2A1B2EB90032863B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C27F527E2A1B4A060032863B /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		C27F52802A1B66290032863B /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
-		C2BF08F72A1C37B10079DD40 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2BF08FB2A1C4E1D0079DD40 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		C2BF08FD2A1C5AF70079DD40 /* HabitColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitColorButton.swift; sourceTree = "<group>"; };
 		C2BF08FF2A1C5E5B0079DD40 /* WeekdayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayPicker.swift; sourceTree = "<group>"; };
@@ -116,6 +130,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C2642AD82A301F1D00951DA5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2642AD12A2FFF7800951DA5 /* Persistence.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C8DE0B6D2A07AA940041C402 = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +161,9 @@
 		C8DE0B782A07AA940041C402 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
-				C2BF08F72A1C37B10079DD40 /* Info.plist */,
-				C8DE0BA42A07BCAE0041C402 /* Navigation */,
+				C2642AD82A301F1D00951DA5 /* Controllers */,
+				C2642AC32A2F607500951DA5 /* Info.plist */,
+				C8DE0BA42A07BCAE0041C402 /* Views */,
 				C8DE0BA32A07BC9A0041C402 /* Models */,
 				C21DC8982A08C92200621FD3 /* Fonts */,
 				C8DE0B7D2A07AA970041C402 /* Assets.xcassets */,
@@ -178,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				C8DE0BA92A0A02740041C402 /* goal_data.json */,
+				C2642AD32A2FFFD500951DA5 /* HabitDataModel.xcdatamodeld */,
 				C8DE0BAB2A0A0C420041C402 /* user_habits.json */,
 				C27F52802A1B66290032863B /* HabitViewModel.swift */,
 				C89D00E72A18E41B004E8463 /* ParseUserData.swift */,
@@ -185,7 +209,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C8DE0BA42A07BCAE0041C402 /* Navigation */ = {
+		C8DE0BA42A07BCAE0041C402 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				C8DE0B792A07AA940041C402 /* StepByStepApp.swift */,
@@ -195,14 +219,19 @@
 				C2BF08FB2A1C4E1D0079DD40 /* CustomColor.swift */,
 				C8DE0BA52A090C4D0041C402 /* AddGoalView.swift */,
 				C8DE0BA72A090C6B0041C402 /* AddHabitsView.swift */,
-				C27F527C2A1B2EB90032863B /* ContentView.swift */,
 				C2BF08FF2A1C5E5B0079DD40 /* WeekdayPicker.swift */,
 				C2BF08FD2A1C5AF70079DD40 /* HabitColorButton.swift */,
 				C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */,
 				C8602D642A19A513006583E7 /* HabitButtonStyle.swift */,
-				C27F527E2A1B4A060032863B /* HomeScreenView.swift */,
+				C2642AC72A2F6E1600951DA5 /* HabitTimeView.swift */,
+				C2642AC92A2F6F7F00951DA5 /* HabitWeeklyCalendarView.swift */,
+				C2642ACB2A2F707700951DA5 /* HabitDurationView.swift */,
+				C2642ACD2A2F714800951DA5 /* HabitDueDateView.swift */,
+				C2642ACF2A2F71D300951DA5 /* ContentTitleView.swift */,
+				C27F527C2A1B2EB90032863B /* ContentView.swift */,
+				C2642AC52A2F682800951DA5 /* ShowHabitListView.swift */,
 			);
-			path = Navigation;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,17 +376,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DE0BA62A090C4D0041C402 /* AddGoalView.swift in Sources */,
+				C2642ACC2A2F707700951DA5 /* HabitDurationView.swift in Sources */,
 				C27F527D2A1B2EBA0032863B /* ContentView.swift in Sources */,
+				C2642AC62A2F682800951DA5 /* ShowHabitListView.swift in Sources */,
+				C2642ACE2A2F714800951DA5 /* HabitDueDateView.swift in Sources */,
 				C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */,
-				C27F527F2A1B4A060032863B /* HomeScreenView.swift in Sources */,
 				C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */,
 				C8DE0BA82A090C6B0041C402 /* AddHabitsView.swift in Sources */,
 				C21DC8962A08C64000621FD3 /* GetStartedView.swift in Sources */,
 				C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */,
+				C2642AD22A2FFF7800951DA5 /* Persistence.swift in Sources */,
+				C2642AD02A2F71D300951DA5 /* ContentTitleView.swift in Sources */,
 				C2BF08FE2A1C5AF70079DD40 /* HabitColorButton.swift in Sources */,
 				C2BF09002A1C5E5B0079DD40 /* WeekdayPicker.swift in Sources */,
 				C2BF08FC2A1C4E1D0079DD40 /* CustomColor.swift in Sources */,
+				C2642ACA2A2F6F7F00951DA5 /* HabitWeeklyCalendarView.swift in Sources */,
+				C2642AC82A2F6E1600951DA5 /* HabitTimeView.swift in Sources */,
 				C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */,
+				C2642AD52A2FFFD500951DA5 /* HabitDataModel.xcdatamodeld in Sources */,
 				C21DC8942A08C63000621FD3 /* AppLogoView.swift in Sources */,
 				C273F95D2A0BB1AF0047F8B4 /* BeforeSettingBigGoalsView.swift in Sources */,
 				C27F52812A1B66290032863B /* HabitViewModel.swift in Sources */,
@@ -722,6 +758,19 @@
 			productName = LoadingButton;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C2642AD32A2FFFD500951DA5 /* HabitDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C2642AD42A2FFFD500951DA5 /* HabitDataModel.xcdatamodel */,
+			);
+			currentVersion = C2642AD42A2FFFD500951DA5 /* HabitDataModel.xcdatamodel */;
+			path = HabitDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C8DE0B6E2A07AA940041C402 /* Project object */;
 }
