@@ -36,11 +36,11 @@ struct ShowHabitListView: View {
                                     .font(.system(size: 12))
                                     .foregroundColor(.gray)
                             }
-                            .frame(width: UIScreen.main.bounds.width / 7 - 10, height: 80)
-                            .background(selectedIndex == index + 5 ? Color.orange : Color.white)
-                            .cornerRadius(10)
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
-                            .onTapGesture {
+                                .frame(width: UIScreen.main.bounds.width / 7 - 10, height: 80)
+                                .background(selectedIndex == index + 5 ? Color.orange : Color.white)
+                                .cornerRadius(10)
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                                .onTapGesture {
                                 selectedIndex = index + 5
                                 selectedDate = Date().addingTimeInterval(TimeInterval(86400 * index))
                             }
@@ -48,9 +48,9 @@ struct ShowHabitListView: View {
 
                         Spacer().frame(width: 100)
                     }
-                    .frame(width: UIScreen.main.bounds.width + CGFloat(1000 * 20), height: 100)
-                    .padding(.horizontal, 20)
-                    .background(Color.white)
+                        .frame(width: UIScreen.main.bounds.width + CGFloat(1000 * 20), height: 100)
+                        .padding(.horizontal, 20)
+                        .background(Color.white)
                 }
 
                 // show habit lists
@@ -61,24 +61,33 @@ struct ShowHabitListView: View {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 20)
                                         .foregroundColor(colorFromHex(habit.color ?? "FAC088"))
-                                    VStack(spacing: 4){
+                                    VStack(spacing: 4) {
                                         Text(habitText)
                                             .frame(maxWidth: .infinity)
                                             .font(.headline)
                                         Text("\(habit.selectedHours) hours \(habit.selectedMinutes) minutes")
                                             .foregroundColor(.gray)
+                                        
+                                        if let dueDate = habit.dueDate {
+                                            let userFriendlyDate = userFriendlyDate(date: dueDate)
+                                            if habit.hasDueDate == true {
+                                                Text("Due Date: \(userFriendlyDate)")
+                                            }
+                                        } else {
+                                            Text("")
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                    .padding()
+                        .padding()
                 }
             }
-            .fullScreenCover(isPresented: $shouldShowContentView) {
+                .fullScreenCover(isPresented: $shouldShowContentView) {
                 ContentView(selectedGoal: .constant("Be a morning person"), selectedHabit: .constant("Test habit"), habitTextField: .constant("Test free text"))
             }
-            .toolbar {
+                .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         showDeleteConfirmationAlert = true
@@ -87,7 +96,7 @@ struct ShowHabitListView: View {
                             .renderingMode(.original)
                             .frame(width: 30, height: 30)
                     }
-                    .alert(isPresented: $showDeleteConfirmationAlert) {
+                        .alert(isPresented: $showDeleteConfirmationAlert) {
                         Alert(
                             title: Text("Warning"),
                             message: Text("Are you sure you want to delete all habits?"),
@@ -99,10 +108,10 @@ struct ShowHabitListView: View {
                     }
                 }
             }
-            .navigationBarTitle("Habit List")
+                .navigationBarTitle("Habit List")
         }
-        .navigationBarHidden(true)
-        
+            .navigationBarHidden(true)
+
         // Display the button to add goals
         Button(action: {
             // Transition to shouldShowContentView
@@ -118,21 +127,28 @@ struct ShowHabitListView: View {
 
 func colorFromHex(_ hex: String) -> Color? {
     var formattedHex = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-    
+
     if formattedHex.hasPrefix("#") {
         formattedHex.remove(at: formattedHex.startIndex)
     }
-    
+
     if formattedHex.count != 6 {
         return nil
     }
-    
+
     var rgbValue: UInt64 = 0
     Scanner(string: formattedHex).scanHexInt64(&rgbValue)
-    
+
     let r = Double((rgbValue & 0xFF0000) >> 16) / 255.0
     let g = Double((rgbValue & 0x00FF00) >> 8) / 255.0
     let b = Double(rgbValue & 0x0000FF) / 255.0
-    
+
     return Color(red: r, green: g, blue: b)
+}
+
+// Function to convert date to a user-friendly format
+func userFriendlyDate(date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMMM d, yyyy"
+    return formatter.string(from: date)
 }
