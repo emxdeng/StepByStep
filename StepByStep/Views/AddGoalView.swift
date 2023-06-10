@@ -13,8 +13,6 @@ struct AddGoalView: View {
     @State private var shouldShowAfterSettingGoalView = false
     @State private var selectedGoal = ""
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
-    @State var isLoading: Bool = false
     
     
     // Properties
