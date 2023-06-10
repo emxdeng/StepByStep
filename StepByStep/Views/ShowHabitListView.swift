@@ -60,7 +60,7 @@ struct ShowHabitListView: View {
                             VStack {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 20)
-                                        .foregroundColor(ShowHabitListView.lightOrange)
+                                        .foregroundColor(colorFromHex(habit.color ?? "FAC088"))
                                     VStack(spacing: 4){
                                         Text(habitText)
                                             .frame(maxWidth: .infinity)
@@ -114,4 +114,25 @@ struct ShowHabitListView: View {
                 .frame(width: 180, height: 180)
         }
     }
+}
+
+func colorFromHex(_ hex: String) -> Color? {
+    var formattedHex = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+    
+    if formattedHex.hasPrefix("#") {
+        formattedHex.remove(at: formattedHex.startIndex)
+    }
+    
+    if formattedHex.count != 6 {
+        return nil
+    }
+    
+    var rgbValue: UInt64 = 0
+    Scanner(string: formattedHex).scanHexInt64(&rgbValue)
+    
+    let r = Double((rgbValue & 0xFF0000) >> 16) / 255.0
+    let g = Double((rgbValue & 0x00FF00) >> 8) / 255.0
+    let b = Double(rgbValue & 0x0000FF) / 255.0
+    
+    return Color(red: r, green: g, blue: b)
 }

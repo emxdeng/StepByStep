@@ -128,9 +128,29 @@ struct ContentView: View {
                     // Code for 'save' button
                     LoadingButton(action: {
                         shouldShowHabitListView = true
-                        habitViewModel.saveHabit(habitText, selectedHours, selectedMinutes)
+                        let hexColor = selectedHabitColor?.toHex()
+                        print("Selected habit color: \(String(describing: selectedHabitColor))")
+                        print("Hex color: \(String(describing: hexColor))")
+                        habitViewModel.saveHabit(habitText, selectedHours, selectedMinutes, hexColor ?? "FAC088")
+                        
                         print("Text below are habit lists!!!!!!!")
                         print(habitViewModel.habits)
+
+                        for habit in habitViewModel.habits {
+                            if let habitText = habit.text {
+                                print("Habit Text: \(habitText)")
+                            }
+                            if let habitColor = habit.color {
+                                print("Habit Color: \(habitColor)")
+                            }
+
+                            print("Habit hours: \(habit.selectedHours)")
+                            print("Habit minutes: \(habit.selectedMinutes)")
+
+                            // Print other habit data here
+                        }
+
+
                         print("end line of habit lists&&&&")
                     }, isLoading: $isLoading) {
                         Text("Save")
