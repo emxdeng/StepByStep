@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LoadingButton
 
 struct ContentView: View {
     @State private var hasDueDate = true
@@ -19,6 +20,7 @@ struct ContentView: View {
     @State private var selectedMinutes = 0
     @State private var hideTimePickers = false
     @State private var shouldShowHabitListView = false // transit to ShouldHabitListView
+    @State var isLoading = false
 
     @StateObject var habitViewModel = HabitViewModel()
     @Binding var selectedGoal: String
@@ -49,7 +51,7 @@ struct ContentView: View {
 
                     // Title of this screen
                     ContentTitleView()
-                    
+
                     Spacer().frame(height: 30)
 
                     // Code for choosing the goal the habit is part of
@@ -62,7 +64,7 @@ struct ContentView: View {
                             .alignmentGuide(.leading) { _ in 0 }
 
                         Spacer()
-                        
+
                         TextField("My goal", text: $selectedGoal)
                             .font(.system(size: 18))
                             .foregroundColor(.white)
@@ -70,13 +72,13 @@ struct ContentView: View {
                             .background(Color.orange)
                             .cornerRadius(10)
                     }
-                    
-                    Spacer().frame(height:20)
+
+                    Spacer().frame(height: 20)
 
                     // Set the due date of the goal
                     HabitDueDateView(hasDueDate: $hasDueDate, selectedDate: $selectedDate)
 
-                    
+
                     // Code for 'helpful habit' that the user will input
                     VStack {
                         Section(header: Text("Helpful habit")
@@ -124,13 +126,13 @@ struct ContentView: View {
                     HabitDurationView(hideTimePickers: $hideTimePickers, selectedHours: $selectedHours, selectedMinutes: $selectedMinutes)
 
                     // Code for 'save' button
-                    Button(action: {
+                    LoadingButton(action: {
                         shouldShowHabitListView = true
                         habitViewModel.saveHabit(habitText, selectedHours, selectedMinutes)
                         print("Text below are habit lists!!!!!!!")
                         print(habitViewModel.habits)
                         print("end line of habit lists&&&&")
-                    }) {
+                    }, isLoading: $isLoading) {
                         Text("Save")
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.white)
@@ -143,25 +145,25 @@ struct ContentView: View {
             }
                 .navigationBarBackButtonHidden(true)
                 .navigationBarItems(leading: Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .padding(2)
-                        Text("Back")
-                    }
-                })
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                    Image(systemName: "chevron.left")
+                        .imageScale(.large)
+                        .padding(2)
+                    Text("Back")
+                }
+            })
         }
-        .onAppear(){
+            .onAppear() {
             if habitTextField == "" {
                 habitText = selectedHabit
             } else {
                 habitText = habitTextField
             }
         }
-        
-        .padding(10)
+
+            .padding(10)
 
             .environmentObject(habitViewModel) // Pass the ViewModel to the environment
         .fullScreenCover(isPresented: $shouldShowHabitListView) { // Transition to the HomeScreenView

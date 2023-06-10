@@ -7,6 +7,8 @@
 
 import SwiftUI
 import OmenTextField
+import LoadingButton
+
 
 
 struct AddHabitsView: View {
@@ -15,6 +17,7 @@ struct AddHabitsView: View {
     @State private var selectedHabit: String = ""
     @State private var showContentView = false // Track whether to show the ContentView
     @State private var textFieldText: String = ""
+
 
     //Disable continue button if no habits are selected or entered
     var isContinueButtonEnabled: Bool {

@@ -14,6 +14,9 @@ struct AddGoalView: View {
     @State private var selectedGoal = ""
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
+    @State var isLoading: Bool = false
+    
+    
     // Properties
     var body: some View {
         NavigationView {
