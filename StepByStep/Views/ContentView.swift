@@ -22,6 +22,8 @@ struct ContentView: View {
 
     @StateObject var habitViewModel = HabitViewModel()
     @Binding var selectedGoal: String
+    @Binding var selectedHabit: String
+    @Binding var habitTextField: String
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -47,6 +49,8 @@ struct ContentView: View {
 
                     // Title of this screen
                     ContentTitleView()
+                    
+                    Spacer().frame(height: 30)
 
                     // Code for choosing the goal the habit is part of
                     VStack {
@@ -57,6 +61,8 @@ struct ContentView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .alignmentGuide(.leading) { _ in 0 }
 
+                        Spacer()
+                        
                         TextField("My goal", text: $selectedGoal)
                             .font(.system(size: 18))
                             .foregroundColor(.white)
@@ -64,10 +70,13 @@ struct ContentView: View {
                             .background(Color.orange)
                             .cornerRadius(10)
                     }
+                    
+                    Spacer().frame(height:20)
 
                     // Set the due date of the goal
                     HabitDueDateView(hasDueDate: $hasDueDate, selectedDate: $selectedDate)
 
+                    
                     // Code for 'helpful habit' that the user will input
                     VStack {
                         Section(header: Text("Helpful habit")
@@ -144,6 +153,15 @@ struct ContentView: View {
                     }
                 })
         }
+        .onAppear(){
+            if habitTextField == "" {
+                habitText = selectedHabit
+            } else {
+                habitText = habitTextField
+            }
+        }
+        
+        .padding(10)
 
             .environmentObject(habitViewModel) // Pass the ViewModel to the environment
         .fullScreenCover(isPresented: $shouldShowHabitListView) { // Transition to the HomeScreenView
@@ -156,7 +174,7 @@ struct ContentView: View {
 
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView(selectedGoal: .constant("Be a morning person"))
+            ContentView(selectedGoal: .constant("Be a morning person"), selectedHabit: .constant("test habit"), habitTextField: .constant(""))
                 .environmentObject(HabitViewModel())
         }
     }
