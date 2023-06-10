@@ -37,10 +37,9 @@ struct HabitDueDateView: View {
             if hasDueDate {
                 EmptyView()
             } else {
-                DatePicker(selection: $selectedDate, displayedComponents: [.date], label: { Text("Date") })
+                DatePicker(selection: $selectedDate, in: Date()..., displayedComponents: [.date], label: { Text("Date") })
                     .background(CustomColor.lightOrange)
             }
         }
     }
 }
-
