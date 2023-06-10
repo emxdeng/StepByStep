@@ -27,6 +27,7 @@
 		C8602D602A1906A3006583E7 /* OmenTextField in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D5F2A1906A3006583E7 /* OmenTextField */; };
 		C8602D632A190B24006583E7 /* LoadingButton in Frameworks */ = {isa = PBXBuildFile; productRef = C8602D622A190B24006583E7 /* LoadingButton */; };
 		C8602D652A19A513006583E7 /* HabitButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8602D642A19A513006583E7 /* HabitButtonStyle.swift */; };
+		C871CC682A3457330087B71A /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C871CC672A3457330087B71A /* Color+Extensions.swift */; };
 		C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */; };
 		C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D00E72A18E41B004E8463 /* ParseUserData.swift */; };
 		C8DE0B7A2A07AA940041C402 /* StepByStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DE0B792A07AA940041C402 /* StepByStepApp.swift */; };
@@ -78,6 +79,7 @@
 		C2BF08FD2A1C5AF70079DD40 /* HabitColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitColorButton.swift; sourceTree = "<group>"; };
 		C2BF08FF2A1C5E5B0079DD40 /* WeekdayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayPicker.swift; sourceTree = "<group>"; };
 		C8602D642A19A513006583E7 /* HabitButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitButtonStyle.swift; sourceTree = "<group>"; };
+		C871CC672A3457330087B71A /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		C89D00E12A10FA1E004E8463 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		C89D00E72A18E41B004E8463 /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
 		C8DE0B762A07AA940041C402 /* StepByStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepByStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +214,7 @@
 		C8DE0BA42A07BCAE0041C402 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C871CC672A3457330087B71A /* Color+Extensions.swift */,
 				C8DE0B792A07AA940041C402 /* StepByStepApp.swift */,
 				C21DC8932A08C63000621FD3 /* AppLogoView.swift */,
 				C21DC8952A08C64000621FD3 /* GetStartedView.swift */,
@@ -379,6 +382,7 @@
 				C2642ACC2A2F707700951DA5 /* HabitDurationView.swift in Sources */,
 				C27F527D2A1B2EBA0032863B /* ContentView.swift in Sources */,
 				C2642AC62A2F682800951DA5 /* ShowHabitListView.swift in Sources */,
+				C871CC682A3457330087B71A /* Color+Extensions.swift in Sources */,
 				C2642ACE2A2F714800951DA5 /* HabitDueDateView.swift in Sources */,
 				C89D00E22A10FA1E004E8463 /* RoundedButtonStyle.swift in Sources */,
 				C89D00E82A18E41B004E8463 /* ParseUserData.swift in Sources */,
