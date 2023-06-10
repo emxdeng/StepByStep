@@ -8,41 +8,22 @@
 import SwiftUI
 import OmenTextField
 
+
 struct AddHabitsView: View {
-
     @Binding var selectedGoal: String
-
-    //Properties
-    var body: some View {
-        HabitsView(selectedGoal: $selectedGoal)
-    }
-}
-
-struct AddHabitsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddHabitsView(selectedGoal: .constant("Be a morning person"))
-            .previewDevice("iPhone 14 Pro")
-    }
-}
-
-struct HabitsView: View {
-
-    @Binding var selectedGoal: String
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var selectedHabit: String = ""
-    
     @State private var showContentView = false // Track whether to show the ContentView
 
+    @State private var showBackButton = true
+
     //Properties
     var body: some View {
-        GeometryReader { geometry in
 
-            NavigationView {
+        NavigationView {
+            GeometryReader { geometry in
                 VStack {
-
-                    let habits = setHabits(selectedGoal: selectedGoal)
-                        .components(separatedBy: ";")
-
+                    let habits = setHabits(selectedGoal: selectedGoal).components(separatedBy: ";")
                     VStack {
                         Spacer().frame(height: 80)
                         Text("Here are some suggestions to help you achieve your goal!")
@@ -54,7 +35,6 @@ struct HabitsView: View {
                         Spacer().frame(height: 20)
                     }.lineSpacing(5)
 
-
                     VStack {
                         ForEach(habits, id: \.self) { habit in
                             Button(action: {
@@ -62,9 +42,8 @@ struct HabitsView: View {
                             }) {
                                 Text(habit)
                             }
-                            .buttonStyle(HabitButtonStyle(selected: $selectedHabit, identifier: habit))
-                            .padding(.vertical, 10) // Optional: Add padding between buttons
-
+                                .buttonStyle(HabitButtonStyle(selected: $selectedHabit, identifier: habit))
+                                .padding(.vertical, 10) // Optional: Add padding between buttons
                             Spacer()
                         }
                     }
@@ -72,21 +51,19 @@ struct HabitsView: View {
                     VStack {
                         Text("+")
                         Text("Or add your little step manually :)")
-                        
                         OmenTextField("Write your response here", text: .constant(""))
                             .padding(10)
                             .disabled(!selectedHabit.isEmpty)
                             .frame(width: geometry.size.width * 0.9, height: geometry.size.height * 0.05)
                             .opacity(!selectedHabit.isEmpty ? 0.5 : 1.0)
-
                             .background(
-                                Color("LightOrange")
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color("LightOrange"), lineWidth: 2)
-                                    )
-                                    .cornerRadius(20)
+                            Color("LightOrange")
+                                .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color("LightOrange"), lineWidth: 2)
                             )
+                                .cornerRadius(20)
+                        )
                     }
 
                     Spacer().frame(height: 30)
@@ -104,15 +81,32 @@ struct HabitsView: View {
                     })
 
                     Spacer().frame(height: 100)
-
                 }
                     .padding()
             }
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .padding(2)
+                        Text("Back")
+                    }
+                })
+                .fullScreenCover(isPresented: $showContentView) { // Transition to ContentView
+                ContentView(selectedGoal: $selectedGoal)
+            }
         }
-        .navigationBarHidden(true)
-        .fullScreenCover(isPresented: $showContentView) { // Transition to ContentView
-            ContentView(selectedGoal: $selectedGoal)
-        }
+    }
+}
+
+
+struct AddHabitsView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddHabitsView(selectedGoal: .constant("Be a morning person"))
+            .previewDevice("iPhone 14 Pro")
     }
 }
 
