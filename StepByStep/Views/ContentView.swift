@@ -131,7 +131,7 @@ struct ContentView: View {
                         let hexColor = selectedHabitColor?.toHex()
                         print("Selected habit color: \(String(describing: selectedHabitColor))")
                         print("Hex color: \(String(describing: hexColor))")
-                        habitViewModel.saveHabit(habitText, selectedHours, selectedMinutes, hexColor ?? "FAC088", selectedDate, !hasDueDate)
+                        habitViewModel.saveHabit(habitText, selectedHours, selectedMinutes, hexColor ?? "FAC088", selectedDate, !hasDueDate, selectedDays)
 
                         print("Text below are habit lists!!!!!!!")
                         print(habitViewModel.habits)
@@ -148,6 +148,7 @@ struct ContentView: View {
                             print("Habit minutes: \(habit.selectedMinutes)")
                             print("Due date: \(String(describing: habit.dueDate))")
                             print("Has due date: \(habit.hasDueDate)")
+                            print("Days of week: \(String(describing: habit.daysOfWeek))")
 
                             // Print other habit data here
                         }
@@ -194,7 +195,6 @@ struct ContentView: View {
 //            HomeScreenView(habitText: $habitText, habits: $habitViewModel.habits, habitColor: selectedHabitColor) // Pass habit text and color to the HomeScreenView
         }
     }
-
 
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {

@@ -63,6 +63,9 @@ struct BeforeSettingBigGoalsView: View {
                             HStack(spacing: 20) {
                                 ForEach(-180...180, id: \.self) { index in
                                     VStack {
+                                        Text(getCurrentDayOfWeek(selectedDate: Date().addingTimeInterval(TimeInterval(86400 * index))))
+                                                            .font(.system(size: 12))
+                                                            .foregroundColor(.gray)
                                         Text(String(Date().addingTimeInterval(TimeInterval(86400 * index)).dayOfMonth()))
                                             .font(.system(size: 20))
                                             .fontWeight(.bold)

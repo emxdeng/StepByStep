@@ -28,7 +28,7 @@ class HabitViewModel: ObservableObject {
     }
 
     // Save habit
-    func saveHabit(_ habitText: String, _ selectedHours: Int, _ selectedMinutes: Int, _ selectedColor: String, _ selectedDate: Date, _ hasDueDate: Bool) {
+    func saveHabit(_ habitText: String, _ selectedHours: Int, _ selectedMinutes: Int, _ selectedColor: String, _ selectedDate: Date, _ hasDueDate: Bool, _ daysOfWeek: [String]) {
         let context = persistenceController.container.viewContext
         let habit = Habit(context: context)
         habit.text = habitText
@@ -37,6 +37,7 @@ class HabitViewModel: ObservableObject {
         habit.color = selectedColor
         habit.dueDate = selectedDate
         habit.hasDueDate = hasDueDate
+        habit.daysOfWeek = daysOfWeek.joined(separator: ";")
 
         habits.append(habit)
         persistenceController.save()

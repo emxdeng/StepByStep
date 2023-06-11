@@ -28,6 +28,9 @@ struct ShowHabitListView: View {
                     HStack(spacing: 20) {
                         ForEach(-180...180, id: \.self) { index in
                             VStack {
+                                Text(getCurrentDayOfWeek(selectedDate: Date().addingTimeInterval(TimeInterval(86400 * index))))
+                                                    .font(.system(size: 12))
+                                                    .foregroundColor(.gray)
                                 Text(String(Date().addingTimeInterval(TimeInterval(86400 * index)).dayOfMonth()))
                                     .font(.system(size: 20))
                                     .fontWeight(.bold)
@@ -35,6 +38,7 @@ struct ShowHabitListView: View {
                                 Text(Date().addingTimeInterval(TimeInterval(86400 * index)).monthShort())
                                     .font(.system(size: 12))
                                     .foregroundColor(.gray)
+                                
                             }
                                 .frame(width: UIScreen.main.bounds.width / 7 - 10, height: 80)
                                 .background(selectedIndex == index + 5 ? Color.orange : Color.white)
@@ -57,24 +61,26 @@ struct ShowHabitListView: View {
                 VStack(spacing: 10) {
                     ForEach(habitViewModel.habits, id: \.self) { habit in
                         if let habitText = habit.text {
-                            VStack {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .foregroundColor(colorFromHex(habit.color ?? "FAC088"))
-                                    VStack(spacing: 4) {
-                                        Text(habitText)
-                                            .frame(maxWidth: .infinity)
-                                            .font(.headline)
-                                        Text("\(habit.selectedHours) hours \(habit.selectedMinutes) minutes")
-                                            .foregroundColor(.gray)
-                                        
-                                        if let dueDate = habit.dueDate {
-                                            let userFriendlyDate = userFriendlyDate(date: dueDate)
-                                            if habit.hasDueDate == true {
-                                                Text("Due Date: \(userFriendlyDate)")
+                            if shouldHabitDisplay(currentDayOfWeek: getCurrentDayOfWeek(selectedDate: selectedDate), daysOfWeek: habit.daysOfWeek ?? "Mon;Tue;Wed;Thu;Fri;Sat;Sun") {
+                                VStack {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .foregroundColor(colorFromHex(habit.color ?? "FAC088"))
+                                        VStack(spacing: 4) {
+                                            Text(habitText)
+                                                .frame(maxWidth: .infinity)
+                                                .font(.headline)
+                                            Text("\(habit.selectedHours) hours \(habit.selectedMinutes) minutes")
+                                                .foregroundColor(.gray)
+
+                                            if let dueDate = habit.dueDate {
+                                                let userFriendlyDate = userFriendlyDate(date: dueDate)
+                                                if habit.hasDueDate == true {
+                                                    Text("Due Date: \(userFriendlyDate)")
+                                                }
+                                            } else {
+                                                Text("")
                                             }
-                                        } else {
-                                            Text("")
                                         }
                                     }
                                 }
@@ -151,4 +157,19 @@ func userFriendlyDate(date: Date) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "MMMM d, yyyy"
     return formatter.string(from: date)
+}
+
+func shouldHabitDisplay(currentDayOfWeek: String, daysOfWeek: String) -> Bool {
+    if daysOfWeek.contains(currentDayOfWeek) {
+        return true
+    } else {
+        return false
+    }
+}
+
+func getCurrentDayOfWeek(selectedDate: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "E" // 'E' represents the abbreviated day of the week
+
+    return dateFormatter.string(from: selectedDate)
 }
