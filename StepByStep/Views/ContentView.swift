@@ -131,6 +131,7 @@ struct ContentView: View {
                         let hexColor = selectedHabitColor?.toHex()
                         print("Selected habit color: \(String(describing: selectedHabitColor))")
                         print("Hex color: \(String(describing: hexColor))")
+                        
                         habitViewModel.saveHabit(habitText, selectedHours, selectedMinutes, hexColor ?? "FAC088", selectedDate, !hasDueDate, selectedDays)
 
                         print("Text below are habit lists!!!!!!!")

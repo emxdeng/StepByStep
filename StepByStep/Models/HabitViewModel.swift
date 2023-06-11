@@ -37,7 +37,13 @@ class HabitViewModel: ObservableObject {
         habit.color = selectedColor
         habit.dueDate = selectedDate
         habit.hasDueDate = hasDueDate
-        habit.daysOfWeek = daysOfWeek.joined(separator: ";")
+        
+        // Default is all days of the week
+        if (daysOfWeek.joined(separator: ";") == ""){
+            habit.daysOfWeek = "Mon;Tue;Wed;Thu;Fri;Sat;Sun"
+        } else {
+            habit.daysOfWeek = daysOfWeek.joined(separator: ";")
+        }
 
         habits.append(habit)
         persistenceController.save()
