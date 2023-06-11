@@ -1,4 +1,6 @@
 # StepByStep
+https://github.com/emxdeng/StepByStep
+
 ## 1. Target Users & Problem Being Solved
 There are already many habit-tracking apps, but they only focus on keeping track of small daily habits and the user cannot visualise why they need to repeat these every day.
 We thus came up with a solution that breaks down a goal into smaller habits. This way, the user can get a better idea of why they need to form certain habits. Ultimately, we believe small habits can achieve big goals *step by step*.
