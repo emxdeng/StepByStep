@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Style for habit color button
+ */
+
 struct HabitColorButton: View {
     let color: Color
     let action: () -> Void

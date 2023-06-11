@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Homepage view once 1 or more habits are added.
+ */
+
 struct ShowHabitListView: View {
     @State private var shouldShowContentView = false // Transit to ContentView
     @State private var showDeleteConfirmationAlert = false // Show the pop-up window
@@ -23,6 +27,8 @@ struct ShowHabitListView: View {
 
     var body: some View {
         NavigationView {
+            
+            //Display horizontal scroll of dates
             ScrollView {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
@@ -57,7 +63,7 @@ struct ShowHabitListView: View {
                         .background(Color.white)
                 }
 
-                // show habit lists
+                // Display habits associated with selected date
                 VStack(spacing: 10) {
                     ForEach(habitViewModel.habits, id: \.self) { habit in
                         if let habitText = habit.text {
@@ -93,6 +99,7 @@ struct ShowHabitListView: View {
                 .fullScreenCover(isPresented: $shouldShowContentView) {
                 ContentView(selectedGoal: .constant("Be a morning person"), selectedHabit: .constant("Test habit"), habitTextField: .constant("Test free text"))
             }
+                //Icons at top right of screen - statistics and delete all habits
                 .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
@@ -131,6 +138,7 @@ struct ShowHabitListView: View {
     }
 }
 
+// Returns the color from a hex code string
 func colorFromHex(_ hex: String) -> Color? {
     var formattedHex = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
@@ -159,6 +167,7 @@ func userFriendlyDate(date: Date) -> String {
     return formatter.string(from: date)
 }
 
+// Function to determine whether a habit should display based on day of the week
 func shouldHabitDisplay(currentDayOfWeek: String, daysOfWeek: String) -> Bool {
     if daysOfWeek.contains(currentDayOfWeek) {
         return true
@@ -167,6 +176,7 @@ func shouldHabitDisplay(currentDayOfWeek: String, daysOfWeek: String) -> Bool {
     }
 }
 
+// Returns formatted day of the week
 func getCurrentDayOfWeek(selectedDate: Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "E" // 'E' represents the abbreviated day of the week

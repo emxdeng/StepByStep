@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Select the end date for the habit
+ */
+
 struct HabitWeeklyCalendarView: View {
     @Binding var selectedDays: [String]
     @Binding var selectedHabitColor: Color?

@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Select how long user works on the habit each day
+ */
+
 struct HabitDurationView: View {
     @Binding var hideTimePickers: Bool
     @Binding var selectedHours: Int

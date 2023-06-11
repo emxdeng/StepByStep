@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Select which weekdays the habit should apply to.
+ */
+
 struct WeekdayPicker: View {
     @Binding var selectedDays: [String]
     @Binding var selectedHabitColor: Color?

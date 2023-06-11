@@ -8,12 +8,19 @@
 import Foundation
 import SwiftUI
 
+/**
+ 
+After the GetStartedView - this view lets users know they don't have any goals or habits set up and they should add one.
+ 
+ */
+
 struct BeforeSettingBigGoalsView: View {
     @State private var selectedIndex: Int?
     @State private var selectedDate: Date = Date() // Initialize selectedDate to the current date
     @State private var showAddGoalView = false // Track whether to show the AddGoalView
 
     init() {
+        //Initialize selectedDate to today's date
         _selectedDate = State(initialValue: Date())
     }
 

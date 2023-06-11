@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Style for buttons in AddGoalView
+ */
+
 struct RoundedButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
             let pressed = configuration.isPressed

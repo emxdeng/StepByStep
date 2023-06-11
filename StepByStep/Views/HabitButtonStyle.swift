@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Style for buttons in AddHabitsView
+ */
+
 struct HabitButtonStyle: ButtonStyle {
     @Binding var selected: String
     let identifier: String

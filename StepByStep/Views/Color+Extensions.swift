@@ -9,6 +9,13 @@ import Foundation
 import SwiftUI
 
 extension Color {
+    
+    /**
+       Converts the color to its hexadecimal representation.
+       
+       - Returns: The hexadecimal representation of the color, or `nil` if the conversion fails.
+       */
+    
     func toHex() -> String? {
         guard let components = UIColor(self).cgColor.components else { return nil }
         

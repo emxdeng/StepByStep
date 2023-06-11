@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Select the time of day for the habit to apply to
+ */
+
 struct HabitTimeView: View {
     @Binding var hasAlarmTime: Bool
     @Binding var selectedAlarmTime: Date

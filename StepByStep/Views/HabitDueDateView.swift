@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+/**
+ Select due date for habit to be completed
+ */
+
 struct HabitDueDateView: View {
     @Binding var hasDueDate: Bool
     @Binding var selectedDate: Date
