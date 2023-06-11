@@ -10,13 +10,13 @@ import CoreData
 
 class HabitViewModel: ObservableObject {
     @Published var habits: [Habit] = []
-    
+
     private let persistenceController = PersistenceController.shared
 
     init() {
         fetchHabits()
     }
-    
+
     func fetchHabits() {
         let request: NSFetchRequest<Habit> = Habit.fetchRequest()
 
@@ -37,9 +37,9 @@ class HabitViewModel: ObservableObject {
         habit.color = selectedColor
         habit.dueDate = selectedDate
         habit.hasDueDate = hasDueDate
-        
+
         // Default is all days of the week
-        if (daysOfWeek.joined(separator: ";") == ""){
+        if (daysOfWeek.joined(separator: ";") == "") {
             habit.daysOfWeek = "Mon;Tue;Wed;Thu;Fri;Sat;Sun"
         } else {
             habit.daysOfWeek = daysOfWeek.joined(separator: ";")
@@ -48,11 +48,11 @@ class HabitViewModel: ObservableObject {
         habits.append(habit)
         persistenceController.save()
     }
-    
+
     // Delete all habits
     func deleteAllHabits() {
         let context = persistenceController.container.viewContext
-        
+
         do {
             let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Habit.fetchRequest()
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -63,7 +63,7 @@ class HabitViewModel: ObservableObject {
             print("Error deleting habits: \(error)")
         }
     }
-    
+
 }
 
 

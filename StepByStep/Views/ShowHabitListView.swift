@@ -71,7 +71,7 @@ struct ShowHabitListView: View {
                                                 .frame(maxWidth: .infinity)
                                                 .font(.headline)
                                             Text("\(habit.selectedHours) hours \(habit.selectedMinutes) minutes")
-                                                .foregroundColor(.gray)
+                                                .foregroundColor(.white)
 
                                             if let dueDate = habit.dueDate {
                                                 let userFriendlyDate = userFriendlyDate(date: dueDate)
