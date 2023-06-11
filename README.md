@@ -1,5 +1,6 @@
 # StepByStep
 https://github.com/emxdeng/StepByStep
+Presentation: https://drive.google.com/file/d/1ecSasa-m9oyDpMiLolIPUHupNl5hlye_/view?usp=sharing
 
 ## 1. Target Users & Problem Being Solved
 There are already many habit-tracking apps, but they only focus on keeping track of small daily habits and the user cannot visualise why they need to repeat these every day.
