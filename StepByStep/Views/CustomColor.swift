@@ -8,10 +8,22 @@
 import Foundation
 import SwiftUI
 
+/**
+ Define custom colors used in the app
+*/
+
 struct CustomColor {
+
+    // Text color
     static let textColor = Color("TextColor")
+
+    // Gray color
     static let gray = Color("Gray")
+
+    // Light orange color
     static let lightOrange = Color("LightOrange")
+
+    // Habit colors
     static let habitColor1 = Color("FAC088")
     static let habitColor2 = Color("F29094")
     static let habitColor3 = Color("A6CFF0")
@@ -38,5 +50,3 @@ struct CustomColor {
     static let habitColor24 = Color("F1B2A4")
     static let habitColor25 = Color("EC987E")
 }
-
-

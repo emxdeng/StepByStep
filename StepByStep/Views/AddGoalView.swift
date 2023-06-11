@@ -8,19 +8,29 @@
 import SwiftUI
 import Foundation
 
+/**
+ 
+After choosing to add a new goal, allow user to select an overarching goal 
+ 
+ */
+
 struct AddGoalView: View {
+
+    // MARK: - State and Environment Variables
 
     @State private var shouldShowAfterSettingGoalView = false
     @State private var selectedGoal = ""
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     
-    // Properties
+    // MARK: - Body
+
     var body: some View {
         NavigationView {
             VStack {
                 Spacer().frame(height: 65)
 
+                // Title
                 Text("Do you have something big you want to achieve?")
                     .font(.custom("Skia", size: 20))
                     .offset(x: -10)
@@ -44,6 +54,7 @@ struct AddGoalView: View {
                         Spacer()
                     }
                 }).buttonStyle(RoundedButtonStyle())
+                
                 // Be a morning person
                 Button(action: {
                     shouldShowAfterSettingGoalView = true

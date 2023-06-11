@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/**
+ The main entry point of the StepByStep application.
+*/
+
  @main
 struct StepByStepApp: App {
     @State var currentView: AnyView = AnyView(AppLogoView())

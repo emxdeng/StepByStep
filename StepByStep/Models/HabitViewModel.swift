@@ -8,6 +8,9 @@
 import SwiftUI
 import CoreData
 
+/**
+ CoreData CRUD functions
+ */
 class HabitViewModel: ObservableObject {
     @Published var habits: [Habit] = []
 

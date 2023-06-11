@@ -8,6 +8,12 @@
 import Foundation
 import SwiftUI
 
+/**
+ 
+ The initial get started screen for new users to StepByStep.
+ 
+ */
+
 struct GetStartedView: View {
     var body: some View {
         // Create a ZStack to place elements on top of each other

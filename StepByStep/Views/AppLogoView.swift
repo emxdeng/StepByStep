@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+/**
+ 
+ The loading screen when initially opening StepByStep.
+ 
+ */
+
 struct AppLogoView: View {
     var body: some View {
         // Create a ZStack to place elements on top of each other

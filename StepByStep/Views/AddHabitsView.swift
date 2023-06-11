@@ -9,6 +9,10 @@ import SwiftUI
 import OmenTextField
 
 
+/**
+ After selecting an overarching goal, define a habit related to the goal.
+ */
+
 struct AddHabitsView: View {
     @Binding var selectedGoal: String
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>

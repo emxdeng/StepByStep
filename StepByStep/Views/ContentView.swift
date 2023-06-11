@@ -8,6 +8,10 @@
 import SwiftUI
 import LoadingButton
 
+/**
+ Define properties and details for a selected habit.
+ */
+
 struct ContentView: View {
     @State private var hasDueDate = true
     @State private var selectedDate = Date()
